@@ -88,15 +88,6 @@
  * ## colors
  * ------------------------------------------------------------------- */
 :root {
-
-    /* color-1(#eabe7c)
-     * color-2(#23967f)
-     */
-    --color-1 : hsla(36, 72%, 70%, 1);
-    --color-2 : hsla(168, 62%, 36%, 1);
-
-    /* theme color variations
-     */
     --color-1-lighter : hsla(36, 72%, 90%, 1);
     --color-1-light   : hsla(36, 72%, 80%, 1);
     --color-1-dark    : hsla(36, 72%, 60%, 1);
@@ -106,10 +97,11 @@
     --color-2-dark    : hsla(168, 62%, 26%, 1);
     --color-2-darker  : hsla(168, 62%, 16%, 1);
 
-    /* feedback colors
-     * color-error(#ffd1d2), color-success(#c8e675), 
-     * color-info(#d7ecfb), color-notice(#fff099)
-     */
+    --primary-color: var(--color-gray-10);
+    --secondary-color: var(--color-white);
+    --accent-color-1 : lightgreen;
+    --accent-color-2 : hsla(168, 62%, 36%, 1);
+
     --color-error           : hsla(359, 100%, 91%, 1);
     --color-success         : hsla(76, 69%, 68%, 1);
     --color-info            : hsla(205, 82%, 91%, 1);
@@ -119,11 +111,6 @@
     --color-info-content    : hsla(205, 32%, 31%, 1);
     --color-notice-content  : hsla(51, 30%, 30%, 1);
 
-    /* shades 
-     * generated using 
-     * Tint & Shade Generator 
-     * (https://maketintsandshades.com/)
-     */
     --color-black   : #000000;
     --color-gray-19 : #020202;
     --color-gray-18 : #040404;
@@ -146,17 +133,14 @@
     --color-gray-1  : #e8e8e8;
     --color-white   : #ffffff;
 
-    /* text
-     */
+    /* text */
     --color-text        : var(--color-gray-4);
     --color-text-dark   : var(--color-white);
     --color-text-light  : var(--color-gray-7);
     --color-placeholder : var(--color-gray-7);
 
-    /* buttons
-     */
+    /* buttons */
     --color-btn                    : var(--color-gray-9);
-    --color-btn-text               : var(--color-1);
     --color-btn-hover              : var(--color-white);
     --color-btn-hover-text         : var(--color-black);
     --color-btn-primary            : var(--color-1-dark);
@@ -170,7 +154,7 @@
 
     /* preloader
      */
-    --color-preloader-bg : var(--color-gray-10);
+    --color-preloader-bg : var(--primary-color);
     --color-loader       : white;
     --color-loader-light : rgba(255, 255, 255, 0.1);
 
@@ -1280,14 +1264,14 @@ body {
 /* links
  */
 a {
-    color      : var(--color-1);
+    color      : var(--accent-color-1);
     transition : all 0.3s ease-in-out;
 }
 
 a:focus,
 a:hover,
 a:active {
-    color : var(--color-2);
+    color : var(--accent-color-2);
 }
 
 a:hover,
@@ -1660,7 +1644,7 @@ ul.disc li::before {
     width          : 8px;
     height         : 8px;
     border-radius  : 50%;
-    background     : var(--color-1);
+    background     : var(--accent-color-1);
     position       : absolute;
     left           : -.9em;
     top            : 11px;
@@ -1669,7 +1653,7 @@ ul.disc li::before {
 
 dt {
     margin : 0;
-    color  : var(--color-1);
+    color  : var(--accent-color-1);
 }
 
 dd {
@@ -1914,7 +1898,7 @@ input[type="password"]:focus,
 textarea:focus,
 select:focus {
     color         : var(--color-text);
-    border-bottom : 1px solid var(--color-1);
+    border-bottom : 1px solid var(--accent-color-1);
 }
 
 label,
@@ -1994,7 +1978,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-text-fill-color : var(--color-1);
+    -webkit-text-fill-color : var(--accent-color-1);
     transition              : background-color 5000s ease-in-out 0s;
 }
 
@@ -2022,7 +2006,7 @@ input[type="button"] {
     line-height             : calc(var(--btn-height) - 2px);
     padding                 : 0 3.6rem;
     margin                  : 0 0.4rem var(--vspace-0_5) 0;
-    color                   : var(--color-btn-text);
+    color                   : var(--accent-color-1);
     text-decoration         : none;
     text-align              : center;
     white-space             : nowrap;
@@ -2435,7 +2419,7 @@ td:last-child {
 }
 
 .skill-bars li .progress {
-    background : var(--color-1);
+    background : var(--accent-color-1);
     position   : relative;
     height     : 100%;
 }
@@ -2578,7 +2562,7 @@ td:last-child {
 }
 
 .stats-tabs li a:hover {
-    color : var(--color-1);
+    color : var(--accent-color-1);
 }
 
 .stats-tabs li a em {
@@ -2668,7 +2652,7 @@ img.u-pull-left {
 }
 
 .text-pretitle.with-line {
-    color        : var(--color-1);
+    color        : var(--accent-color-1);
     padding-left : 6rem;
     transform    : translateX(-6rem);
 }
@@ -2867,7 +2851,7 @@ img.u-pull-left {
 
 .s-pagewrap .circles span {
     display       : block;
-    border        : 1px solid var(--color-1);
+    border        : 1px solid var(--accent-color-1);
     border-radius : 50%;
     opacity       : .1;
     transform     : translate(-50%, -50%);
@@ -2959,7 +2943,7 @@ img.u-pull-left {
 .mobile-home-link a:hover,
 .main-nav a:focus,
 .main-nav a:hover {
-    color : var(--color-1);
+    color : var(--accent-color-1);
 }
 
 .mobile-home-link {
@@ -3131,7 +3115,7 @@ img.u-pull-left {
 
     .main-nav .current a {
         background-color : transparent;
-        color            : var(--color-1);
+        color            : var(--accent-color-1);
     }
 
     .main-nav ul {
@@ -3267,7 +3251,7 @@ img.u-pull-left {
 
 .intro-scrolldown:focus svg path,
 .intro-scrolldown:hover svg path {
-    fill : var(--color-1);
+    fill : var(--accent-color-1);
 }
 
 /* ------------------------------------------------------------------- 
@@ -3493,7 +3477,7 @@ img.u-pull-left {
     height           : 8px;
     width            : 8px;
     border-radius    : 50%;
-    background-color : var(--color-1);
+    background-color : var(--accent-color-1);
     position         : absolute;
     top              : var(--timeline-top-adjust);
     left             : 0;
@@ -3619,7 +3603,7 @@ img.u-pull-left {
 
 .folio-list__item-link:focus,
 .folio-list__item-link:hover {
-    color   : var(--color-1);
+    color   : var(--accent-color-1);
     outline : 0;
 }
 
@@ -3868,7 +3852,7 @@ img.u-pull-left {
 }
 
 .testimonials .swiper-pagination-bullet-active {
-    background : var(--color-1);
+    background : var(--accent-color-1);
     opacity    : 1;
 }
 
@@ -3884,7 +3868,7 @@ img.u-pull-left {
 }
 
 .testimonial-slider__slide:hover .testimonial-slider__cite strong {
-    color : var(--color-1);
+    color : var(--accent-color-1);
 }
 
 .testimonial-slider__slide:hover .testimonial-slider__cite span {
@@ -4072,7 +4056,7 @@ img.u-pull-left {
 .contact-links a:hover,
 .contact-social a:focus,
 .contact-social a:hover {
-    color : var(--color-1);
+    color : var(--accent-color-1);
 }
 
 .contact-social {
