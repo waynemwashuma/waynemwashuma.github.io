@@ -1,11 +1,7 @@
 import { stagger, animate, createTimeline } from "animejs";
-import { create as createLightBox } from "basiclightbox";
-import MoveTo from "moveto";
 import { Swiper } from "swiper";
 
 document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-
-/* Animations */
 
 /* Mobile Menu */
 export function initMobileMenu() {
@@ -43,13 +39,12 @@ export function initMobileMenu() {
 
 };
 
-
 /* Highlight active menu link on pagescroll */
 export function initScrollSpy() {
   window.addEventListener("scroll", navHighlight);
   function navHighlight() {
     const sections = document.querySelectorAll(".target-section");
-    const {scrollY} = window;
+    const { scrollY } = window;
     sections.forEach(function (current) {
       if (!(current instanceof HTMLElement)) return
       const sectionHeight = current.offsetHeight;
@@ -71,14 +66,13 @@ export function initScrollSpy() {
 
 };
 
-
 /* Animate elements if in viewport */
 export function initViewAnimate() {
   window.addEventListener("scroll", viewportAnimation);
-  
+
   function viewportAnimation() {
     const blocks = document.querySelectorAll("[data-animate-block]");
-    const scrollY = window.pageYOffset;
+    const { scrollY } = window;
 
     blocks.forEach(function (current) {
       if (!(current instanceof HTMLElement)) return
@@ -106,12 +100,9 @@ export function initViewAnimate() {
 
 };
 
-
 /* Swiper */
 export function initSwiper() {
-
   new Swiper('.swiper-container', {
-
     slidesPerView: 1,
     pagination: {
       el: '.swiper-pagination',
@@ -138,111 +129,29 @@ export function initSwiper() {
 
 };
 
-
-/* Lightbox */
-export function initLightbox() {
-
-  const folioLinks = document.querySelectorAll('.folio-list__item-link');
-  const modals: any[] = [];
-
-  folioLinks.forEach(function (link) {
-    const modalbox = link.getAttribute('href');
-    if (!modalbox) return
-    const element = document.querySelector(modalbox)
-    if (!element) return
-    let instance = createLightBox(
-      element,
-      {
-        onShow: function (instance) {
-          //detect Escape key press
-          document.addEventListener("keydown", function (event) {
-            event = event || window.event;
-            if (event.keyCode === 27) {
-              instance.close();
-            }
-          });
-          return false
-        }
-      }
-    )
-    modals.push(instance);
-  });
-
-  folioLinks.forEach(function (link, index) {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      modals[index].show();
-    });
-  });
-
-};
-
-
-/* Alert boxes */
-export function initAlertBoxes() {
-
-  const boxes = document.querySelectorAll('.alert-box');
-
-  boxes.forEach(function (box) {
-    if (!(box instanceof HTMLElement)) return
-    box.addEventListener('click', function (event) {
-      if (!(event.target instanceof HTMLElement)) return
-      if (!(event.target.parentElement instanceof HTMLElement)) return
-      if (event.target.matches(".alert-box__close")) {
-        event.stopPropagation();
-        event.target.parentElement.classList.add("hideit");
-
-        setTimeout(function () {
-          box.style.display = "none";
-        }, 500)
-      }
-    });
-
-  })
-
-};
-
-
 /* Smoothscroll */
-export function initMoveTo() {
-
-  const easeFunctions = {
-    easeInQuad: function (t: number, b: number, c: number, d: number) {
-      t /= d;
-      return c * t * t + b;
-    },
-    easeOutQuad: function (t: number, b: number, c: number, d: number) {
-      t /= d;
-      return -c * t * (t - 2) + b;
-    },
-    easeInOutQuad: function (t: number, b: number, c: number, d: number) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
-      t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
-    },
-    easeInOutCubic: function (t: number, b: number, c: number, d: number) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t * t + b;
-      t -= 2;
-      return c / 2 * (t * t * t + 2) + b;
-    }
+export  const EaseFunctions = {
+  easeInQuad: function (t: number, b: number, c: number, d: number) {
+    t /= d;
+    return c * t * t + b;
+  },
+  easeOutQuad: function (t: number, b: number, c: number, d: number) {
+    t /= d;
+    return -c * t * (t - 2) + b;
+  },
+  easeInOutQuad: function (t: number, b: number, c: number, d: number) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  },
+  easeInOutCubic: function (t: number, b: number, c: number, d: number) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t * t + b;
+    t -= 2;
+    return c / 2 * (t * t * t + 2) + b;
   }
-
-  const triggers = document.querySelectorAll('.smoothscroll');
-
-  const moveTo = new MoveTo({
-    tolerance: 0,
-    duration: 1200,
-    easing: 'easeInOutCubic',
-    container: window
-  }, easeFunctions);
-
-  triggers.forEach(function (trigger) {
-    moveTo.registerTrigger(trigger as HTMLElement);
-  });
-
-};
+}
 
 export function createWebTimeline() {
   return createTimeline({
@@ -281,23 +190,8 @@ export function createWebTimeline() {
       ],
       delay: stagger(100, { reversed: true })
     })
-    .add('.intro-social li', {
-      translateX: [-50, 0],
-      opacity: [0, 1],
-      delay: stagger(100, { reversed: true })
-    })
     .add('.intro-scrolldown', {
       translateY: [100, 0],
       opacity: [0, 1]
     }, '-=800');
 }
-
-
-/* Initialize */
-initMobileMenu();
-initViewAnimate();
-initScrollSpy()
-initSwiper();
-initLightbox();
-initAlertBoxes();
-initMoveTo();

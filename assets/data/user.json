@@ -1,0 +1,12 @@
+{
+  "name": "Wayne Mwashuma",
+  "projects": [
+    {
+      "name":"Wima engine",
+      "category":"game engine",
+      "description":"A HTML5 game engine written in javascript.It supports both 2D and 3D game development with a multitude of plugins to help in the development process.",
+      "image":"/images/gallery/wima-engine.jpg",
+      "url":"https://github.com/wimaengine/wima"
+    }
+  ]
+}

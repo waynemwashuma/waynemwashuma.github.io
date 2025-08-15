@@ -16,7 +16,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
-    "@types/basiclightbox": "^5.0.4",
     "@types/moveto": "^1.8.4",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
@@ -30,8 +29,8 @@
     "vite": "^7.1.0"
   },
   "dependencies": {
+    "@types/moveTo": "npm:@types/moveto@^1.8.4",
     "animejs": "^4.1.2",
-    "basiclightbox": "^5.0.4",
     "mailtoui": "^1.0.3",
     "moveto": "^1.8.2",
     "prismjs": "^1.30.0",
