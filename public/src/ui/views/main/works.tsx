@@ -1,13 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { ProjectItem } from "../../components/index.tsx";
+import { userContext } from "../../store.tsx";
 export function Works() {
-  const [data, setData] = useState(null)
-
-  useEffect(() => {
-    fetch("data/user.json")
-      .then(res => res.json())
-      .then(resData => setData(resData));
-  }, [])
+  const {projects} = useContext(userContext)
 
   return (
     <>
@@ -22,18 +17,16 @@ export function Works() {
 
           <ul className="folio-list row block-lg-one-half block-stack-on-1000">
             {
-              // SAFETY: I wrote the json file
-              //@ts-ignore
-              data ? data.projects.map(({ image, url, category, name, description }) => {
+              projects.map(({ image, link, category, name, description }) => {
                 return <ProjectItem
                   image={image}
-                  url={url}
+                  url={link}
                   category={category}
                   name={name}
                   description={description}
                   key={name}
                 />
-              }) : null}
+              })}
           </ul>
         </div>
       </div>

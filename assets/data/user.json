@@ -1,12 +1,35 @@
 {
   "name": "Wayne Mwashuma",
+  "about": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.",
+  "image": "images/avatars/default-inverted.jpg",
+  "location":"Nairobi, Kenya",
+  "skills": [
+    "Frontend development",
+    "Backend development",
+    "Game development",
+    "CI/CD automation"
+  ],
+  "education": [
+    {
+      "qualification": "Certificate of Software Engineering",
+      "institute": "Modcom Institute of Technology",
+      "timeline": "2022",
+      "description": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi."
+    },
+    {
+      "qualification": "Bachelors of Software Engineering",
+      "institute": "Multimedia University of Kenya",
+      "timeline": "2023-2027",
+      "description": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi."
+    }
+  ],
   "projects": [
     {
-      "name":"Wima engine",
-      "category":"game engine",
-      "description":"A HTML5 game engine written in javascript.It supports both 2D and 3D game development with a multitude of plugins to help in the development process.",
-      "image":"/images/gallery/wima-engine.jpg",
-      "url":"https://github.com/wimaengine/wima"
+      "name": "Wima engine",
+      "category": "game engine",
+      "description": "A HTML5 game engine written in javascript.It supports both 2D and 3D game development with a multitude of plugins to help in the development process.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "link": "https://github.com/wimaengine/wima"
     }
   ]
 }

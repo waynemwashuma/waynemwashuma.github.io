@@ -1,4 +1,8 @@
+import { useContext } from "react"
+import { userContext } from "../../store.tsx"
+
 export function Intro() {
+  const {name,location} = useContext(userContext)
   return (
     <>
       <div className="row intro-content wide">
@@ -8,11 +12,11 @@ export function Intro() {
           </div>
 
           <h1 className="text-huge-title">
-            I am Wayne Mwashuma, <br></br>
+            I am {name}, <br></br>
           </h1>
           <span className=".h4">
             A full stack developer &amp; game developer
-            based in <span style={{ color: "var(--accent-color-1)" }}>Nairobi, Kenya.</span>
+            based in <span style={{ color: "var(--accent-color-1)" }}>{location}.</span>
           </span>
         </div>
       </div>

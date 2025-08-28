@@ -1,35 +1,15 @@
+import { useContext } from "react"
+import { Education } from "../../../common/index.ts"
+import { userContext } from "../../store.tsx"
+
 export function About() {
-  const skills = [
-    "Frontend development",
-    "Backend development",
-    "Game development",
-    "CI/CD automation"
-  ]
-  const education = [
-    new Education(
-      "Certificate of Software Engineering",
-      "Modcom Institute of Technology",
-      "2022",
-      "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi" +
-      "cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident" +
-      "cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet" +
-      "est occaecat nisi."
-    ),
-    new Education(
-      "Bachelors of Software Engineering",
-      "Multimedia University of Kenya",
-      "2023-2027",
-      "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi" +
-      "cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident" +
-      "cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet" +
-      "est occaecat nisi."
-    )
-  ]
+  const {skills,education,about,image} = useContext(userContext)
+  
   return (
     <>
       <div className="row about-info wide" data-animate-block>
         <div className="column lg-6 md-12 about-info__pic-block">
-          <img src="images/avatars/default-inverted.jpg" alt="an avatar image." className="about-info__pic" data-animate-el />
+          <img src={image} alt="an avatar image." className="about-info__pic" data-animate-el />
         </div>
 
         <div className="column lg-6 md-12">
@@ -38,11 +18,7 @@ export function About() {
               About
             </h2>
             <p className="attention-getter" data-animate-el>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
+              {about}
             </p>
           </div>
         </div>
@@ -79,19 +55,6 @@ export function About() {
       </div>
     </>
   )
-}
-
-export class Education {
-  timeline: string = ''
-  institute: string = ''
-  qualification: string = ''
-  description: string = ''
-  constructor(qualification = '', institute = '', timeline = '', description = '') {
-    this.qualification = qualification
-    this.institute = institute
-    this.timeline = timeline
-    this.description = description
-  }
 }
 
 export function EducationCard({education}:{education:Education}) {
