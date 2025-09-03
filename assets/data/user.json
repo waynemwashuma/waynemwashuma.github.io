@@ -1,8 +1,8 @@
 {
   "name": "Wayne Mwashuma",
-  "about": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.",
+  "about": "I’m a Full Stack Software Engineer who loves building things that live at the intersection of creativity and technology.I enjoy designing clean, scalable systems from responsive web apps to robust back - end services.When in game developer mode, I love experimenting with mechanics, physics, and interactive design to create engaging worlds that people can be immersed in .I thrive on turning ideas into reality, whether that’ s coding a new feature, prototyping a game mechanic or solving a complex technical challenge.",
   "image": "images/avatars/default-inverted.jpg",
-  "location":"Nairobi, Kenya",
+  "location": "Nairobi, Kenya",
   "skills": [
     "Frontend development",
     "Backend development",
@@ -10,26 +10,24 @@
     "CI/CD automation"
   ],
   "education": [
-    {
-      "qualification": "Certificate of Software Engineering",
-      "institute": "Modcom Institute of Technology",
-      "timeline": "2022",
-      "description": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi."
-    },
-    {
-      "qualification": "Bachelors of Software Engineering",
-      "institute": "Multimedia University of Kenya",
-      "timeline": "2023-2027",
-      "description": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi."
-    }
-  ],
+  {
+    "qualification": "Certificate of Software Engineering",
+    "institute": "Modcom Institute of Technology",
+    "timeline": "2022",
+    "description": "Modcom is a practical‐focused tech training hub in Westlands, Nairobi, offering hands-on courses in software dev, data science, cybersecurity, and IoT. With strong industry partnerships, flexible schedules, and real-world learning, it's ideal for those eager to quickly build employable tech skills"
+  },
+  {
+    "qualification": "Bachelors of Software Engineering",
+    "institute": "Multimedia University of Kenya",
+    "timeline": "2023-2027",
+    "description": "Multimedia University of Kenya (MMU) is a public university chartered in 2013, located in Karen, Nairobi. The university has faculties for Computing and Information Technology, where programs such as Software Engineering, Computer Science, and IT prepare students for careers in modern tech. These courses are supported by industry partnerships (e.g., Huawei, Google, IBM, Intel) and hands-on training in software labs, innovation hubs, and collaborative projects."
+  }],
   "projects": [
-    {
-      "name": "Wima engine",
-      "category": "game engine",
-      "description": "A HTML5 game engine written in javascript.It supports both 2D and 3D game development with a multitude of plugins to help in the development process.",
-      "image": "/images/gallery/wima-engine.jpg",
-      "link": "https://github.com/wimaengine/wima"
-    }
-  ]
+  {
+    "name": "Wima engine",
+    "category": "game engine",
+    "description": "A HTML5 game engine written in javascript.It supports both 2D and 3D game development with a multitude of plugins to help in the development process.",
+    "image": "/images/gallery/wima-engine.jpg",
+    "link": "https://github.com/wimaengine/wima"
+  }]
 }
