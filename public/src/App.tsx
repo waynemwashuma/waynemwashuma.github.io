@@ -15,40 +15,36 @@ export default function App() {
     fetch("data/user.json")
       .then(res => res.json())
       .then(resData => {
+        const tl = createWebTimeline()
         const user = User.deserialize(resData)
-        if(!user) throw "User json is corrupted"
+        if (!user) throw "User json is corrupted"
         setUser(user)
-      });
-  }, [])
-  useEffect(() => {
-    const tl = createWebTimeline()
-    scope.current = createScope({ root }).add(self => {
-      if (!self) return
-      window.addEventListener('load', function () {
-        const element = document.querySelector('html')
-        const preloader = document.querySelector('#preloader');
+        scope.current = createScope({ root }).add(self => {
+          if (!self) return
+          const element = document.querySelector('html')
+          const preloader = document.querySelector('#preloader');
 
-        if (!preloader) return;
-        if (!element) return
-        element.classList.remove('ss-preload');
-        element.classList.add('ss-loaded');
+          if (!preloader) return;
+          if (!element) return
+          element.classList.remove('ss-preload');
+          element.classList.add('ss-loaded');
 
-        document.querySelectorAll('.ss-animated').forEach(function (item) {
-          item.classList.remove('ss-animated');
+          document.querySelectorAll('.ss-animated').forEach(function (item) {
+            item.classList.remove('ss-animated');
+          });
+          initMobileMenu();
+          initViewAnimate();
+          initScrollSpy()
+          initSwiper();
+          tl.play();
         });
-        initMobileMenu();
-        initViewAnimate();
-        initScrollSpy()
-        initSwiper();
-        tl.play();
       });
-    });
 
     return () => {
       if (scope.current)
         scope.current.revert()
     }
-  }, []);
+  }, [])
 
   return (
     <userContext.Provider value={user}>
