@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { userContext } from "../../store.tsx";
+
 export function Contact() {
+  const { socials } = useContext(userContext);
+
   return (
     <>
       <div className="row contact-top">
@@ -26,8 +31,13 @@ export function Contact() {
         <div className="column lg-4 md-5 tab-6 stack-on-550 contact-block">
           <h3 className="text-pretitle">Social</h3>
           <ul className="contact-social">
-            <li><a href="https://github.com/waynemwashuma" target="_blank" rel="noopener noreferrer">Github</a></li>
-            <li><a href="https://ke.linkedin.com/in/wayne-mwashuma-878200252" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            {socials.length ? socials.map(({ name, url }) => (
+              <li key={name}>
+                <a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
+              </li>
+            )) : (
+              <li>No social links available.</li>
+            )}
           </ul>
         </div>
         <div className="column lg-4 md-12 contact-block">

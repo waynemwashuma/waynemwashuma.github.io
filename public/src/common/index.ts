@@ -41,6 +41,7 @@ export class User {
   skills: string[] = []
   education: Education[] = []
   projects: Project[] = []
+  socials: SocialMedia[] = []
   static deserialize(data: any): User | undefined {
     const user = new User()
     if (!(data instanceof Object)) return
@@ -92,6 +93,17 @@ export class User {
         }
       }
     }
+
+    if (data.socials instanceof Array) {
+      for (let i = 0; i < data.socials.length; i++) {
+        const socialData = data.socials[i];
+        const social = SocialMedia.deserialize(socialData)
+
+        if (social) {
+          user.socials.push(social)
+        }
+      }
+    }
     return user
   }
 }
@@ -127,5 +139,29 @@ export class Project {
     }
 
     return project
+  }
+}
+
+export class SocialMedia {
+  name: string = ''
+  url: string = ''
+
+  constructor(name = '', url = '') {
+    this.name = name
+    this.url = url
+  }
+
+  static deserialize(data: any): SocialMedia | undefined {
+    const social = new SocialMedia()
+    if (!(data instanceof Object)) return
+    if (typeof data.name === "string") {
+      social.name = data.name
+    }
+
+    if (typeof data.url === "string") {
+      social.url = data.url
+    }
+
+    return social
   }
 }
