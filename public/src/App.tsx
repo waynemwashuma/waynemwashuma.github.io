@@ -7,53 +7,65 @@ import { userContext } from "./ui/store.tsx";
 import { User } from "./common/index.ts";
 
 export default function App() {
-  const [user, setUser] = useState(new User())
-  const root = useRef(null);
+  const [user, setUser] = useState(() => new User());
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const root = useRef<HTMLDivElement | null>(null);
   const scope: RefObject<Scope | null> = useRef(null);
 
   useEffect(() => {
-    fetch("data/user.json")
+    const controller = new AbortController();
+    let isActive = true;
+
+    fetch("data/user.json", { signal: controller.signal })
       .then(res => res.json())
       .then(resData => {
-        const tl = createWebTimeline()
-        const user = User.deserialize(resData)
-        if (!user) throw "User json is corrupted"
-        setUser(user)
+        if (!isActive) return;
+        const tl = createWebTimeline();
+        const user = User.deserialize(resData);
+        if (!user) throw new Error("User JSON is corrupted");
+        setUser(user);
         scope.current = createScope({ root }).add(self => {
-          if (!self) return
-          const element = document.querySelector('html')
-          const preloader = document.querySelector('#preloader');
+          if (!self) return;
+          const element = document.documentElement;
+          const preloader = document.querySelector("#preloader");
 
           if (!preloader) return;
-          if (!element) return
-          element.classList.remove('ss-preload');
-          element.classList.add('ss-loaded');
+          element.classList.remove("ss-preload");
+          element.classList.add("ss-loaded");
 
-          document.querySelectorAll('.ss-animated').forEach(function (item) {
-            item.classList.remove('ss-animated');
+          (root.current ?? document).querySelectorAll(".ss-animated").forEach(item => {
+            item.classList.remove("ss-animated");
           });
           initMobileMenu();
           initViewAnimate();
-          initScrollSpy()
+          initScrollSpy();
           initSwiper();
           tl.play();
         });
+      })
+      .catch(error => {
+        if (!isActive) return;
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        console.error("Failed to initialize app:", error);
+        setLoadError("Some profile data failed to load.");
       });
 
     return () => {
-      if (scope.current)
-        scope.current.revert()
-    }
-  }, [])
+      isActive = false;
+      controller.abort();
+      if (scope.current) scope.current.revert();
+    };
+  }, []);
 
   return (
     <userContext.Provider value={user}>
       <div className="s-pagewrap" ref={root}>
+        {loadError && <p role="alert">{loadError}</p>}
         <DecorativeCircles />
         <Header />
         <Main />
         <Footer />
       </div>
     </userContext.Provider>
-  )
+  );
 }
