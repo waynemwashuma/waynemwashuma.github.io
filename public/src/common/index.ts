@@ -37,6 +37,8 @@ export class User {
   name: string = ''
   about: string = ''
   location: string = ''
+  email: string = ''
+  phone: string = ''
   image: string = 'images/avatars/default-inverted.jpg'
   skills: string[] = []
   education: Education[] = []
@@ -55,6 +57,14 @@ export class User {
 
     if (typeof data.location === "string") {
       user.location = data.location
+    }
+
+    if (typeof data.email === "string") {
+      user.email = data.email
+    }
+
+    if (typeof data.phone === "string") {
+      user.phone = data.phone
     }
 
     if (typeof data.image === "string") {

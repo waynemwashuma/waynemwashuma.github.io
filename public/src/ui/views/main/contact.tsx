@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { userContext } from "../../store.tsx";
 
 export function Contact() {
-  const { socials } = useContext(userContext);
+  const { email, phone, socials } = useContext(userContext);
+  const hasEmail = email.trim().length > 0;
+  const hasPhone = phone.trim().length > 0;
+  const availableSocials = socials.filter(({ name, url }) => name.trim() && url.trim());
 
   return (
     <>
@@ -24,15 +27,16 @@ export function Contact() {
         <div className="column lg-3 md-5 tab-6 stack-on-550 contact-block">
           <h3 className="text-pretitle">Reach me</h3>
           <p className="contact-links">
-            <a href="mailto:mwashumawayne@gmail.com" className="mailtoui">Email</a> <br />
-            <a href="tel:+254772029647">Telephone</a>
+            {hasEmail ? <><a href={`mailto:${email}`} className="mailtoui">Email</a> <br /></> : null}
+            {hasPhone ? <a href={`tel:${phone}`}>Telephone</a> : null}
+            {!hasEmail && !hasPhone ? "No contact details available." : null}
           </p>
         </div>
         <div className="column lg-4 md-5 tab-6 stack-on-550 contact-block">
           <h3 className="text-pretitle">Social</h3>
           <ul className="contact-social">
-            {socials.length ? socials.map(({ name, url }) => (
-              <li key={name}>
+            {availableSocials.length ? availableSocials.map(({ name, url }) => (
+              <li key={`${name}-${url}`}>
                 <a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
               </li>
             )) : (
@@ -41,7 +45,7 @@ export function Contact() {
           </ul>
         </div>
         <div className="column lg-4 md-12 contact-block">
-          <a href="mailto:mwashumawayne@gmail.com" className="mailtoui btn btn--medium u-fullwidth contact-btn">
+          <a href={hasEmail ? `mailto:${email}` : "#contact"} className="mailtoui btn btn--medium u-fullwidth contact-btn">
             Contact me.
           </a>
         </div>
