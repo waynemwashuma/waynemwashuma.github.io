@@ -19,15 +19,15 @@ export function Contact() {
         <div className="column lg-3 md-5 tab-6 stack-on-550 contact-block">
           <h3 className="text-pretitle">Reach me</h3>
           <p className="contact-links">
-            <a href="mailto:mwashumawayne@gmail.com" className="mailtoui">Email</a> <br></br>
+            <a href="mailto:mwashumawayne@gmail.com" className="mailtoui">Email</a> <br />
             <a href="tel:+254772029647">Telephone</a>
           </p>
         </div>
         <div className="column lg-4 md-5 tab-6 stack-on-550 contact-block">
           <h3 className="text-pretitle">Social</h3>
           <ul className="contact-social">
-            <li><a href="https://github.com/waynemwashuma">Github</a></li>
-            <li><a href="https://ke.linkedin.com/in/wayne-mwashuma-878200252">LinkedIn</a></li>
+            <li><a href="https://github.com/waynemwashuma" target="_blank" rel="noopener noreferrer">Github</a></li>
+            <li><a href="https://ke.linkedin.com/in/wayne-mwashuma-878200252" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
         </div>
         <div className="column lg-4 md-12 contact-block">
