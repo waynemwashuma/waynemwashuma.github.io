@@ -36,11 +36,19 @@ export default function App() {
           (root.current ?? document).querySelectorAll(".ss-animated").forEach(item => {
             item.classList.remove("ss-animated");
           });
-          initMobileMenu();
-          initViewAnimate();
-          initScrollSpy();
-          initSwiper();
+          const cleanupMobileMenu = initMobileMenu();
+          const cleanupViewAnimate = initViewAnimate();
+          const cleanupScrollSpy = initScrollSpy();
+          const cleanupSwiper = initSwiper();
           tl.play();
+
+          return () => {
+            cleanupMobileMenu();
+            cleanupViewAnimate();
+            cleanupScrollSpy();
+            cleanupSwiper();
+            tl.cancel();
+          };
         });
       })
       .catch(error => {
@@ -53,7 +61,10 @@ export default function App() {
     return () => {
       isActive = false;
       controller.abort();
-      if (scope.current) scope.current.revert();
+      if (scope.current) {
+        scope.current.revert();
+        scope.current = null;
+      }
     };
   }, []);
 
