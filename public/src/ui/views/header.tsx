@@ -1,20 +1,31 @@
 import MoveTo from "moveto"
-import { useEffect, useRef, type RefObject } from "react"
+import { useEffect } from "react"
 import { EaseFunctions } from "../../main.ts";
 
 export function Header() {
-  const moveTo = new MoveTo({
-    tolerance: 0,
-    duration: 1200,
-    easing: 'easeInOutCubic',
-    container: window
-  }, EaseFunctions);
   const options = [
     ["Intro", "#intro"],
     ["About", '#about'],
     ["Projects", '#works'],
     ["Contact", '#contact'],
   ]
+
+  useEffect(() => {
+    const moveTo = new MoveTo({
+      tolerance: 0,
+      duration: 1200,
+      easing: 'easeInOutCubic',
+      container: window
+    }, EaseFunctions);
+
+    const unregisterCallbacks = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>(".main-nav .smoothscroll")
+    ).map(trigger => moveTo.registerTrigger(trigger));
+
+    return () => {
+      unregisterCallbacks.forEach(unregister => unregister());
+    };
+  }, []);
 
   return (
     <header className="s-header">
@@ -25,19 +36,13 @@ export function Header() {
       <div className="row wide main-nav-wrap">
         <nav className="column lg-12 main-nav">
           <ul>
-            {options.map(([name, url], i) => {
-              const trigger:RefObject<HTMLAnchorElement | null> = useRef(null)
-              useEffect(() => {
-                moveTo.registerTrigger(trigger.current as HTMLElement);
-              }, [])
-              return (
-                <li key={`nav-${i}`}>
-                  <a href={url} className="smoothscroll" ref={trigger}>
-                    {name}
-                  </a>
-                </li>
-              )
-            })}
+            {options.map(([name, url], i) => (
+              <li key={`nav-${i}`}>
+                <a href={url} className="smoothscroll">
+                  {name}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
