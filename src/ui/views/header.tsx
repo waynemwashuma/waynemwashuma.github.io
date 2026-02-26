@@ -2,14 +2,21 @@ import MoveTo from "moveto"
 import { useEffect } from "react"
 import { EaseFunctions } from "../../main.ts";
 
-export function Header() {
-  const options = [
-    ["Intro", "#intro"],
-    ["About", '#about'],
-    ["Projects", '#works'],
-    ["Contact", '#contact'],
-  ]
+type NavItem = {
+  name: string;
+  url: string;
+  smooth: boolean;
+};
 
+const options: NavItem[] = [
+  { name: "Intro", url: "#intro", smooth: true },
+  { name: "About", url: "#about", smooth: true },
+  { name: "Projects", url: "#works", smooth: true },
+  { name: "Blog", url: "/blog/", smooth: false },
+  { name: "Contact", url: "#contact", smooth: true }
+];
+
+export function Header() {
   useEffect(() => {
     const moveTo = new MoveTo({
       tolerance: 0,
@@ -36,10 +43,10 @@ export function Header() {
       <div className="row wide main-nav-wrap">
         <nav className="column lg-12 main-nav">
           <ul>
-            {options.map(([name, url], i) => (
+            {options.map((item, i) => (
               <li key={`nav-${i}`}>
-                <a href={url} className="smoothscroll">
-                  {name}
+                <a href={item.url} className={item.smooth ? "smoothscroll" : undefined}>
+                  {item.name}
                 </a>
               </li>
             ))}

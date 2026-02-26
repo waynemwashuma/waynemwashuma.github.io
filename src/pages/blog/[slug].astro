@@ -1,0 +1,57 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts: CollectionEntry<"blog">[] = (await getCollection("blog")).filter(
+    (post: CollectionEntry<"blog">) => !post.data.draft
+  );
+  return posts.map((post: CollectionEntry<"blog">) => ({
+    params: { slug: post.id },
+    props: { post }
+  }));
+};
+
+const { post } = Astro.props as Props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} | Blog`} description={post.data.description}>
+  <main class="blog-post">
+    <p>
+      <a href="/blog/">Back to blog</a>
+    </p>
+    <article>
+      <header>
+        <h1>{post.data.title}</h1>
+        <p>{post.data.description}</p>
+        <small>
+          {post.data.pubDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          })}
+        </small>
+      </header>
+      <Content />
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .blog-post {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+
+  article :global(p),
+  article :global(li) {
+    line-height: 1.7;
+  }
+</style>
