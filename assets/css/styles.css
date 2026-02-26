@@ -234,6 +234,15 @@
     /* default button height
      */
     --vspace-btn : var(--vspace-2);
+
+    /* viewport height fallback for mobile browser UI changes */
+    --viewport-height : 100vh;
+}
+
+@supports (height: 100dvh) {
+    :root {
+        --viewport-height : 100dvh;
+    }
 }
 
 /* on mobile devices below 600px, change the value of '--multiplier' 
@@ -506,6 +515,17 @@ body {
     -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
     -webkit-font-smoothing      : antialiased;
     -moz-osx-font-smoothing     : grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration        : 0.01ms !important;
+        animation-iteration-count : 1 !important;
+        transition-duration       : 0.01ms !important;
+        scroll-behavior           : auto !important;
+    }
 }
 
 p {
@@ -1759,7 +1779,7 @@ img,
     align-items     : center;
     background      : var(--color-body);
     z-index         : 500;
-    height          : 100vh;
+    height          : var(--viewport-height);
     width           : 100%;
     opacity         : 1;
 }
@@ -2195,7 +2215,7 @@ td:last-child {
     margin        : .2rem .2rem;
     color         : var(--color-text-dark);
     border-radius : 4px;
-    transition    : all, .3s, ease-in-out;
+    transition    : all .3s ease-in-out;
 }
 
 .pgn__num:focus,
@@ -2234,7 +2254,7 @@ td:last-child {
     font            : 0/0 a;
     text-shadow     : none;
     color           : transparent;
-    transition      : all, .3s, ease-in-out;
+    transition      : all .3s ease-in-out;
     position        : absolute;
     top             : 50%;
     transform       : translate(0, -50%);
@@ -2251,7 +2271,7 @@ td:last-child {
 .pgn__next svg {
     height     : 2.4rem;
     width      : 2.4rem;
-    transition : all, .3s, ease-in-out;
+    transition : all .3s ease-in-out;
 }
 
 .pgn__prev svg path,
@@ -2845,7 +2865,7 @@ img.u-pull-left {
 .s-pagewrap .circles {
     width  : var(--circle-width);
     height : var(--circle-width);
-    top    : calc(100vh - var(--circle-width));
+    top    : calc(var(--viewport-height) - var(--circle-width));
     left   : calc(100% - 33vw);
 }
 
@@ -3642,7 +3662,7 @@ img.u-pull-left {
 
 .folio-list__item-pic::before,
 .folio-list__item-pic::after {
-    transition : all, 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .folio-list__item-pic::before {
@@ -3684,7 +3704,7 @@ img.u-pull-left {
 .folio-list__item-text::before,
 .folio-list__item-title,
 .folio-list__item-cat {
-    transition : all, 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .folio-list__item-text {
