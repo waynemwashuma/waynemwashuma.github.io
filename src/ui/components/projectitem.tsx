@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Modal } from "./modal.tsx";
+import { Modal } from "./modal";
 import { ModalItem } from "./modalItem.tsx";
 import { createPortal } from "react-dom";
 export function ProjectItem({

@@ -1,4 +1,5 @@
 import { useState, type CSSProperties } from "react"
+
 export const style: CSSProperties = {
   zIndex: 100,
   width: "100vw",
@@ -14,21 +15,23 @@ const modalItemStyle: CSSProperties = {
   left: "50%",
   transform:"translate(-50%,-50%)",
   backgroundColor:"red",
-  width:"fit-content"
+  width:"fit-content",
+  height:"fit-content"
 }
 
-export function Modal({ children,isOpen = true }: ModalOptions) {
-  const [open, setOpen] = useState(isOpen)
+export function Modal({ children,onClose }: ModalOptions) {
+  const [open, setOpen] = useState(true)
 
   function close() {
     setOpen(false)
+    onClose()
   }
   if (!open) {
-    return <></>
+    return null
   }
   return (
     <div style={style} className="modal" onClick={close}>
-      <div style={modalItemStyle}>
+      <div style={modalItemStyle} onClick={e=>e.stopPropagation()}>
         {children}
       </div>
     </div>
@@ -38,4 +41,5 @@ export function Modal({ children,isOpen = true }: ModalOptions) {
 export type ModalOptions = {
   children: any
   isOpen?: boolean
+  onClose:()=>void
 }
