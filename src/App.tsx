@@ -15,6 +15,9 @@ export default function App() {
   useEffect(() => {
     const controller = new AbortController();
     let isActive = true;
+    
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
 
     fetch("data/user.json", { signal: controller.signal })
       .then(res => res.json())

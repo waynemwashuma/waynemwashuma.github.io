@@ -1,0 +1,12 @@
+---
+import App from "../App";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Wayne's Portfolio" description="Portfolio for Wayne Mwashuma">
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+  <div id="root"></div>
+  <App client:only="react" />
+</BaseLayout>

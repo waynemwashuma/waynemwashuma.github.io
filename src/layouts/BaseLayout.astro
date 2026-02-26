@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Wayne Mwashuma website" } = Astro.props;
+---
+
+<!doctype html>
+<html class="no-js ss-preload" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Wayne Mwashuma" />
+    <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>{title}</title>
+  </head>
+  <body id="top">
+    <slot />
+  </body>
+</html>

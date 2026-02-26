@@ -4,9 +4,6 @@ import { Swiper } from "swiper";
 type Cleanup = () => void;
 const NOOP: Cleanup = () => undefined;
 
-document.documentElement.classList.remove("no-js");
-document.documentElement.classList.add("js");
-
 /* Mobile Menu */
 export function initMobileMenu(): Cleanup {
   const toggleButton = document.querySelector('.mobile-menu-toggle');
