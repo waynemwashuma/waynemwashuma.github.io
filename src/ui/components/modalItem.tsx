@@ -2,7 +2,6 @@ import type { ProjectLink } from "../../common/index.ts";
 
 export function ModalItem({ image, name, links, description }: ModalItemOptions) {
   return (
-    <div id="modal-01">
       <div className="modal-popup">
         <img src={image} alt="" />
 
@@ -29,7 +28,6 @@ export function ModalItem({ image, name, links, description }: ModalItemOptions)
           })}
         </div>
       </div>
-    </div>
   )
 }
 

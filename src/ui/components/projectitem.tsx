@@ -20,7 +20,7 @@ export function ProjectItem({
     <>
     {initModal?portal:null}
       <li className="folio-list__item column" data-animate-el>
-        <a className="folio-list__item-link" href="#modal-01" onClick={()=>setModal(true)}>
+        <a className="folio-list__item-link" onClick={()=>setModal(true)}>
           <div className="folio-list__item-pic">
             <img src={image} alt="" />
           </div>
