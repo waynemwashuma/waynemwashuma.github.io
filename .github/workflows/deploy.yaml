@@ -24,6 +24,11 @@ jobs:
         uses: actions/checkout@v4
       - run: npm ci
       - run: "npm run build"
+        env:
+          PUBLIC_GISCUS_REPO: ${{ vars.PUBLIC_GISCUS_REPO }}
+          PUBLIC_GISCUS_REPO_ID: ${{ vars.PUBLIC_GISCUS_REPO_ID }}
+          PUBLIC_GISCUS_CATEGORY: ${{ vars.PUBLIC_GISCUS_CATEGORY }}
+          PUBLIC_GISCUS_CATEGORY_ID: ${{ vars.PUBLIC_GISCUS_CATEGORY_ID }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
