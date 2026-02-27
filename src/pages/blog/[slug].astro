@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import GiscusComments from "../../components/GiscusComments.astro";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -21,7 +22,7 @@ const { post } = Astro.props as Props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={`${post.data.title} | Blog`} description={post.data.description}>
+<BaseLayout ogTitle={post.data.title} title={`${post.data.title} | Blog`} description={post.data.description}>
   <main class="blog-post">
     <p>
       <a href="/blog/">Back to blog</a>
@@ -40,6 +41,7 @@ const { Content } = await render(post);
       </header>
       <Content />
     </article>
+    <GiscusComments />
   </main>
 </BaseLayout>
 
@@ -53,5 +55,11 @@ const { Content } = await render(post);
   article :global(p),
   article :global(li) {
     line-height: 1.7;
+  }
+
+  .blog-post :global(.giscus-comments) {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #d9d9d9;
   }
 </style>
