@@ -14,7 +14,7 @@ export function ModalItem({ image, name, links, description }: ModalItemOptions)
         </div>
         {links.map((link)=>{
           return (
-          <a href={link.url} className="modal-popup__details">
+          <a href={link.url} className="modal-popup__details" target="_blank">
             {link.imageUrl ? <img src={link.imageUrl} alt="" /> : null}
             {link.name || "Project link"}
           </a>
