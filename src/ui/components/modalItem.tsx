@@ -12,15 +12,22 @@ export function ModalItem({ image, name, links, description }: ModalItemOptions)
             {description}
           </p>
         </div>
-        {links.map((link)=>{
-          return (
-          <a href={link.url} className="modal-popup__details" target="_blank">
-            {link.imageUrl ? <img src={link.imageUrl} alt="" /> : null}
-            {link.name || "Project link"}
-          </a>
-        )
-        })
-        }
+        <div className="modal-links-list">
+          {links.map((link) => {
+            return (
+              <a
+                key={`${link.url}-${link.name}`}
+                href={link.url}
+                className="modal-popup__details"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.imageUrl ? <img src={link.imageUrl} alt="" /> : null}
+                {link.name || "Project link"}
+              </a>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

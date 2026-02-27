@@ -3833,14 +3833,16 @@ img.u-pull-left {
 }
 
 .modal-popup__details {
-    background-color : rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    border-radius: 10px;
     font-size        : var(--text-xs);
-    line-height      : var(--vspace-1_25);
-    color            : white;
-    padding          : 0 1.2rem;
+    padding          : 0 10px;
     display          : inline-flex;
     align-items      : center;
     gap              : 0.8rem;
+}
+
+.modal-links-list {
     position         : absolute;
     top              : var(--vspace-1);
     left             : var(--vspace-1);
