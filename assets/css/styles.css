@@ -3838,9 +3838,19 @@ img.u-pull-left {
     line-height      : var(--vspace-1_25);
     color            : white;
     padding          : 0 1.2rem;
+    display          : inline-flex;
+    align-items      : center;
+    gap              : 0.8rem;
     position         : absolute;
     top              : var(--vspace-1);
     left             : var(--vspace-1);
+}
+
+.modal-popup__details img {
+    margin-bottom : 0;
+    width         : 1.6rem;
+    height        : 1.6rem;
+    object-fit    : contain;
 }
 
 .modal-popup__details:focus,

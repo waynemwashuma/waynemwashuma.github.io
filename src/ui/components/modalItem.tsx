@@ -1,4 +1,6 @@
-export function ModalItem({ image, name, url, description }: ModalItemOptions) {
+import type { ProjectLink } from "../../common/index.ts";
+
+export function ModalItem({ image, name, links, description }: ModalItemOptions) {
   return (
     <div id="modal-01">
       <div className="modal-popup">
@@ -10,8 +12,15 @@ export function ModalItem({ image, name, url, description }: ModalItemOptions) {
             {description}
           </p>
         </div>
-
-        <a href={url} className="modal-popup__details">Project link</a>
+        {links.map((link)=>{
+          return (
+          <a href={link.url} className="modal-popup__details">
+            {link.imageUrl ? <img src={link.imageUrl} alt="" /> : null}
+            {link.name || "Project link"}
+          </a>
+        )
+        })
+        }
       </div>
     </div>
   )
@@ -19,7 +28,7 @@ export function ModalItem({ image, name, url, description }: ModalItemOptions) {
 
 export type ModalItemOptions = {
   name: string
-  url: string
+  links: ProjectLink[]
   description: string
   image: string
 }

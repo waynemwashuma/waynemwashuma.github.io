@@ -30,7 +30,14 @@
     "category": "game engine",
     "description": "A HTML5 game engine written in javascript.It supports both 2D and 3D game development with a multitude of plugins to help in the development process.",
     "image": "/images/gallery/wima-engine.jpg",
-    "link": "https://github.com/wimaengine/wima"
+    "links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/wimaengine/wima",
+        "imageUrl": "/images/icons/icon-tag.svg",
+        "priority": 1
+      }
+    ]
   }],
   "socials":[
     {

@@ -17,10 +17,10 @@ export function Works() {
 
           <ul className="folio-list row block-lg-one-half block-stack-on-1000">
             {
-              projects.map(({ image, link, category, name, description }) => {
+              projects.map(({ image, links, category, name, description }) => {
                 return <ProjectItem
                   image={image}
-                  url={link}
+                  links={links}
                   category={category}
                   name={name}
                   description={description}

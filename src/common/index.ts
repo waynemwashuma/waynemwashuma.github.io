@@ -123,7 +123,7 @@ export class Project {
   category: string = ''
   description: string = ''
   image: string = 'images/avatars/default-inverted.jpg'
-  link: string = ''
+  links: ProjectLink[] = []
 
   static deserialize(data: any): Project | undefined {
     const project = new Project()
@@ -140,15 +140,59 @@ export class Project {
       project.image = data.image
     }
 
-    if (typeof data.link === "string") {
-      project.link = data.link
+    if (data.links instanceof Array) {
+      for (let i = 0; i < data.links.length; i++) {
+        const linkData = data.links[i];
+        const link = ProjectLink.deserialize(linkData)
+
+        if (link) {
+          project.links.push(link)
+        }
+      }
     }
+
+    project.links.sort(ProjectLink.compareByPriority)
 
     if (typeof data.category === "string") {
       project.category = data.category
     }
 
     return project
+  }
+}
+
+export class ProjectLink {
+  name: string = ''
+  url: string = ''
+  imageUrl: string = ''
+  priority?: number
+
+  static deserialize(data: any): ProjectLink | undefined {
+    const link = new ProjectLink()
+    if (!(data instanceof Object)) return
+    if (typeof data.name === "string") {
+      link.name = data.name
+    }
+
+    if (typeof data.url === "string") {
+      link.url = data.url
+    }
+
+    if (typeof data.imageUrl === "string") {
+      link.imageUrl = data.imageUrl
+    }
+
+    if (typeof data.priority === "number" && Number.isFinite(data.priority)) {
+      link.priority = data.priority
+    }
+
+    return link
+  }
+
+  static compareByPriority(a: ProjectLink, b: ProjectLink): number {
+    const aPriority = a.priority ?? Number.POSITIVE_INFINITY
+    const bPriority = b.priority ?? Number.POSITIVE_INFINITY
+    return aPriority - bPriority
   }
 }
 
