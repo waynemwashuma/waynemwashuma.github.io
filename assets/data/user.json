@@ -25,20 +25,200 @@
     "description": "Multimedia University of Kenya (MMU) is a public university chartered in 2013, located in Karen, Nairobi. The university has faculties for Computing and Information Technology, where programs such as Software Engineering, Computer Science, and IT prepare students for careers in modern tech. These courses are supported by industry partnerships (e.g., Huawei, Google, IBM, Intel) and hands-on training in software labs, innovation hubs, and collaborative projects."
   }],
   "projects": [
-  {
-    "name": "Wima engine",
-    "category": "game engine",
-    "description": "A HTML5 game engine written in javascript.It supports both 2D and 3D game development with a multitude of plugins to help in the development process.",
-    "image": "/images/gallery/wima-engine.jpg",
-    "links": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/wimaengine/wima",
-        "imageUrl": "/images/icons/icon-tag.svg",
-        "priority": 1
-      }
-    ]
-  }],
+    {
+      "name": "Wima engine",
+      "category": "Game engine",
+      "description": "A HTML5 game engine written in javascript.It supports both 2D and 3D game development with a multitude of plugins to help in the development process.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+        {
+          "name": "Website",
+          "url": "https://wimaengine.github.io/wima/",
+          "imageUrl": "/images/icons/icon-tag.svg"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/wimaengine/wima",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "name": "WebGL Rendering Engine",
+      "category": "project",
+      "description": "A modular WebGL2 rendering engine from scratch in JavaScript, featuring a plugin-based render pipeline, scene graph architecture, custom materials/shaders, mesh generation, lighting, camera controls, render targets, and OBJ/glTF model asset loading (including skinned models). Includes an interactive demo suite to showcase real-time rendering features and engine extensibility.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+        {
+          "name": "Website",
+          "url": "https://waynemwashuma.github.io/webgl/",
+          "imageUrl": "/images/icons/icon-tag.svg"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/webgl",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "name": "School library",
+      "category": "project",
+      "description": "Built a responsive School Library website using HTML and CSS, featuring a categorized book catalog with individual book detail pages, clear site navigation, and a contact page for librarian communication. The project focuses on clean layout design, content organization, and user-friendly browsing.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+                {
+          "name": "Website",
+          "url": "https://waynemwashuma.github.io/school-library/",
+          "imageUrl": "/images/icons/icon-tag.svg"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/school-library",
+          "imageUrl": "/images/icons/icon-tag.svg"
+        }
+      ]
+    },
+    {
+      "name": "Solar system",
+      "category": "project",
+      "description": "An interactive 3D solar system experience that visualizes planets, moons, and asteroid belts with realistic textures, scale-based spacing, and animated orbital movement. It includes visible orbit tracks and smooth free-fly navigation, letting users move through space and inspect celestial bodies from any angle in real time. Designed to turn astronomy concepts into an explorable simulation.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+        {
+          "name": "Website",
+          "url": "https://waynemwashuma.github.io/solar-system/",
+          "imageUrl": "/images/icons/icon-tag.svg"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/solar-system",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "name": "Chaos engine",
+      "category": "project",
+      "description": "Chaos Engine is a modular 2D JavaScript game engine built with an ECS architecture, featuring a canvas renderer, physics simulation (collision detection/response, constraints, broadphase/narrowphase), AI steering behaviors, input handling, audio management, and asset loading for rapid browser-game prototyping.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+        {
+          "name": "Website",
+          "url": "https://waynemwashuma.github.io/chaos-engine/",
+          "imageUrl": "/images/icons/icon-tag.svg"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/chaos-engine",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "name": "Battlefront v1.0.1",
+      "category": "project",
+      "description": "Battlefront is a real-time multiplayer strategy game built with Node.js, Express, Socket.IO, and MySQL. It features live unit control, base capture mechanics, alliance-based gameplay and an integrated global chat system.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/battlefront-v1.0.1",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "name": "Spartial structures",
+      "category": "project",
+      "description": "An interactive 2D collision-detection demo in JavaScript that compares three spatial partitioning strategies, QuadTree, HashGrid, and AABB Tree, with real-time visualization of bounds and collision pairs on canvas.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+        {
+          "name": "Website",
+          "url": "https://waynemwashuma.github.io/spartial-structures/",
+          "imageUrl": "/images/icons/icon-tag.svg"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/spartial-structures",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "name": "Astronaut fly",
+      "category": "project",
+      "description": "Astronaut Fly is a browser-based 2D arcade game built with vanilla JavaScript and a custom ECS-style game architecture, where players boost an astronaut upward, collect stars for points, and use power-ups like magnets and boosters while avoiding out-of-bounds collisions.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+        {
+          "name": "Website",
+          "url": "https://waynemwashuma.github.io/astronaut-fly/",
+          "imageUrl": "/images/icons/icon-tag.svg"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/astronaut-fly",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "name": "Pool",
+      "category": "project",
+      "description": "A browser-based pool game using vanilla JavaScript and HTML5 Canvas, with custom physics for ball movement, collisions, pocket detection, and cue-stick aiming/shooting controls. The project also includes fullscreen support and real-time keyboard interaction to create an arcade-style gameplay experience.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+        {
+          "name": "Website",
+          "url": "https://waynemwashuma.github.io/pool/",
+          "imageUrl": "/images/icons/icon-tag.svg"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/pool",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "name": "C programs",
+      "category": "c",
+      "description": "A list of basic programs for learning C.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/c-programs",
+          "imageUrl": "/images/gallery/wima-engine.jpg",
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "name": "C++ projects",
+      "category": "c",
+      "description": "A list of basic programs for learning C++.",
+      "image": "/images/gallery/wima-engine.jpg",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/cpp-projects",
+          "imageUrl": "/images/gallery/wima-engine.jpg",
+          "priority": 1
+        }
+      ]
+    }
+  ],
   "socials":[
     {
       "name":"Github",
