@@ -54,7 +54,7 @@ export default function App() {
   }, [])
   return (
     <userContext.Provider value={user}>
-      <div className="s-pagewrap" ref={root}>
+      <div className="s-pagewrap landing-page" ref={root}>
         <DecorativeCircles />
         <Header />
         <Main />
