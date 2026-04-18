@@ -1,23 +1,4 @@
-import { useState, type CSSProperties } from "react"
-
-export const style: CSSProperties = {
-  zIndex: 100,
-  width: "100vw",
-  height: "100vh",
-  background: "black",
-  position: "fixed",
-  top: "0px",
-  left: "0px"
-}
-const modalItemStyle: CSSProperties = {
-  position:"absolute",
-  top: "50%",
-  left: "50%",
-  transform:"translate(-50%,-50%)",
-  backgroundColor:"red",
-  width:"fit-content",
-  height:"fit-content"
-}
+import { useState } from "react"
 
 export function Modal({ children,onClose }: ModalOptions) {
   const [open, setOpen] = useState(true)
@@ -30,8 +11,11 @@ export function Modal({ children,onClose }: ModalOptions) {
     return null
   }
   return (
-    <div style={style} className="modal" onClick={close}>
-      <div style={modalItemStyle} onClick={e=>e.stopPropagation()}>
+    <div className="modal" onClick={close}>
+      <div className="modal__dialog" onClick={e=>e.stopPropagation()}>
+        <button className="modal__back" type="button" onClick={close}>
+          Back
+        </button>
         {children}
       </div>
     </div>
