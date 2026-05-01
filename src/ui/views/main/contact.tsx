@@ -27,7 +27,7 @@ export function Contact() {
         <div className="column lg-3 md-5 tab-6 stack-on-550 contact-block">
           <h3 className="text-pretitle">Reach me</h3>
           <p className="contact-links">
-            {hasEmail ? <><a href={`mailto:${email}`} className="mailtoui">Email</a> <br /></> : null}
+            {hasEmail ? <><a href={`mailto:${email}`} className="mailtoui" target="_blank" rel="noopener noreferrer">Email</a> <br /></> : null}
             {hasPhone ? <a href={`tel:${phone}`}>Telephone</a> : null}
             {!hasEmail && !hasPhone ? "No contact details available." : null}
           </p>
@@ -45,7 +45,7 @@ export function Contact() {
           </ul>
         </div>
         <div className="column lg-4 md-12 contact-block">
-          <a href={hasEmail ? `mailto:${email}` : "#contact"} className="mailtoui btn btn--medium u-fullwidth contact-btn">
+           <a href={hasEmail ? `mailto:${email}` : "#contact"} className="mailtoui btn btn--medium u-fullwidth contact-btn" target="_blank" rel="noopener noreferrer">
             Contact me.
           </a>
         </div>

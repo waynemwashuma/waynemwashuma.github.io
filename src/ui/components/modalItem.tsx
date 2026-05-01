@@ -8,10 +8,6 @@ export function ModalItem({ image, name, links, description }: ModalItemOptions)
         </div>
 
         <div className="modal-popup__desc">
-          <h5>{name}</h5>
-          <p>
-            {description}
-          </p>
           <div className="modal-links-list">
             {links.map((link) => {
               return (
@@ -28,6 +24,10 @@ export function ModalItem({ image, name, links, description }: ModalItemOptions)
               )
             })}
           </div>
+          <h5>{name}</h5>
+          <p>
+            {description}
+          </p>
         </div>
       </div>
   )

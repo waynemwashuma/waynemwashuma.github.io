@@ -3410,20 +3410,21 @@ img.u-pull-left {
  * ## about info
  * -------------------------------------------------------------------- */
 .about-info {
-    --gutter    : 0;
     width       : 100%;
     align-items : center;
 }
 
 .about-info__pic {
+    width          : 100%;
+    aspect-ratio   : 1 / 1;
+    border-radius  : 50%;
     object-fit     : cover;
     margin         : 0;
     vertical-align : bottom;
 }
 
 .about-info__text {
-    padding     : var(--vspace-3_5) 10vw var(--vspace-2) 0;
-    margin-left : -4rem;
+    padding : var(--vspace-2) 0;
 }
 
 .about-info__text .text-pretitle {
@@ -3795,21 +3796,26 @@ img.u-pull-left {
     top              : 1rem;
     left             : 1rem;
     z-index          : 2;
+    display          : inline-flex;
+    align-items      : center;
     border           : 0;
-    border-radius    : 999px;
+    border-radius    : var(--border-radius);
     background       : rgba(17, 17, 17, 0.74);
     color            : var(--accent-color-1);
     font-size        : var(--text-xs);
     line-height      : 1;
-    padding          : 0.45rem 1rem;
-    transition       : background-color 0.25s ease, transform 0.25s ease;
+    padding          : 0.7rem 1.2rem;
+    opacity          : 0.8;
+    transition       : var(--transition-default);
 }
 
 .modal__back:hover,
 .modal__back:focus {
     background : rgba(17, 17, 17, 0.92);
     color      : var(--accent-color-2);
+    opacity    : 1;
     transform  : translateY(-1px);
+    outline    : 0;
 }
 
 .modal-popup {
@@ -3900,14 +3906,15 @@ img.u-pull-left {
 
 .modal-popup__details {
     margin           : 0;
-    border           : 1px solid rgba(0, 0, 0, 0.08);
+    border           : 1px solid var(--color-gray-8);
     border-radius    : 999px;
-    background-color : rgba(255, 255, 255, 0.72);
+    background-color : var(--color-black);
     font-size        : var(--text-xs);
     line-height      : 1.2;
     padding          : 0.75rem 1rem;
     display          : inline-flex;
     align-items      : center;
+    color            : white;
     gap              : 0.8rem;
 }
 
@@ -3915,7 +3922,7 @@ img.u-pull-left {
     display          : flex;
     flex-wrap        : wrap;
     gap              : 0.75rem;
-    margin-top       : auto;
+    margin-top       : 0px;
 }
 
 .modal-popup__details img {
@@ -3927,8 +3934,9 @@ img.u-pull-left {
 
 .modal-popup__details:focus,
 .modal-popup__details:hover {
-    background-color : var(--color-body);
+    background-color : var(--color-gray-9);
     color            : white;
+    border-color     : var(--color-white);
 }
 
 /* ------------------------------------------------------------------- 
@@ -3989,6 +3997,7 @@ img.u-pull-left {
     width         : var(--vspace-1_75);
     height        : var(--vspace-1_75);
     border-radius : 100%;
+    object-fit    : cover;
     outline       : none;
     position      : absolute;
     top           : 0;
@@ -4126,7 +4135,7 @@ img.u-pull-left {
     .modal__back {
         top     : 0.85rem;
         left    : 0.85rem;
-        padding : 0.4rem 0.95rem;
+        padding : 0.6rem 1.1rem;
     }
 
     .modal-popup {
@@ -4156,7 +4165,7 @@ img.u-pull-left {
         top       : 0.7rem;
         left      : 0.7rem;
         font-size : 1.2rem;
-        padding   : 0.38rem 0.9rem;
+        padding   : 0.55rem 1rem;
     }
 
     .modal-popup {
