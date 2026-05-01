@@ -12,7 +12,7 @@ export function Works() {
             Recent Projects
           </h2>
           <p className="h1" data-animate-el>
-            Here are some of my projects that I have been working on lately.
+            Here are projects that I have been working on.
           </p>
 
           <ul className="folio-list row block-lg-one-half block-stack-on-1000">
