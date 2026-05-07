@@ -18,7 +18,7 @@ export function Contact() {
           <p className="h1">
             I would love to hear from you.
             Whether you have a question or just
-            want to chat about tech — shoot me a message.
+            want to chat about tech.
           </p>
         </div>
       </div>

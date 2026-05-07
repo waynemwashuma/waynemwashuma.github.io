@@ -3745,29 +3745,31 @@ img.u-pull-left {
 }
 
 .folio-list__proj-link {
-    display  : block;
-    height   : var(--vspace-1);
-    width    : var(--vspace-1);
-    position : absolute;
-    top      : .8rem;
-    right    : var(--vspace-0_75);
+    display          : inline-flex;
+    align-items      : center;
+    justify-content  : center;
+    height           : var(--vspace-1);
+    width            : var(--vspace-1);
+    position         : absolute;
+    top              : .8rem;
+    right            : var(--vspace-0_75);
+    border-radius    : 999px;
+    background       : rgba(10, 10, 10, 0.82);
+    border           : 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter  : blur(10px);
+    transition       : var(--transition-default);
 }
 
-.folio-list__proj-link svg {
-    height    : var(--vspace-0_5);
-    width     : var(--vspace-0_5);
-    transform : translate(-50%, -50%) rotate(-45deg);
-    position  : absolute;
-    top       : 50%;
-    left      : 50%;
-}
-
-.folio-list__proj-link svg path {
-    fill : white;
+.folio-list__proj-link-icon {
+    width  : 1.8rem;
+    height : 1.8rem;
+    color  : white;
 }
 
 .folio-list__proj-link:hover {
-    transform : scale(1.2);
+    transform    : scale(1.08);
+    background   : rgba(18, 18, 18, 0.95);
+    border-color : rgba(255, 255, 255, 0.28);
 }
 
 /* ------------------------------------------------------------------- 
@@ -3925,11 +3927,21 @@ img.u-pull-left {
     margin-top       : 0px;
 }
 
-.modal-popup__details img {
-    margin-bottom : 0;
-    width         : 1.6rem;
-    height        : 1.6rem;
-    object-fit    : contain;
+.modal-popup__icon {
+    width            : 2rem;
+    height           : 2rem;
+    display          : inline-flex;
+    align-items      : center;
+    justify-content  : center;
+    border-radius    : 999px;
+    background       : rgba(255, 255, 255, 0.08);
+    flex-shrink      : 0;
+}
+
+.modal-popup__icon-svg {
+    width  : 1.2rem;
+    height : 1.2rem;
+    color  : white;
 }
 
 .modal-popup__details:focus,

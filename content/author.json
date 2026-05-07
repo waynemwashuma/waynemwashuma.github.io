@@ -34,13 +34,14 @@
         {
           "name": "Website",
           "url": "https://wimaengine.github.io/wima/",
-          "imageUrl": "/images/icons/icon-tag.svg"
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/wimaengine/wima",
           "imageUrl": "/images/icons/icon-tag.svg",
-          "priority": 1
+          "priority": 2
         }
       ]
     },
@@ -53,13 +54,14 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/chaos-engine/",
-          "imageUrl": "/images/icons/icon-tag.svg"
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/chaos-engine",
           "imageUrl": "/images/icons/icon-tag.svg",
-          "priority": 1
+          "priority": 2
         }
       ]
     },
@@ -72,13 +74,14 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/webgl/",
-          "imageUrl": "/images/icons/icon-tag.svg"
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/webgl",
           "imageUrl": "/images/icons/icon-tag.svg",
-          "priority": 1
+          "priority": 2
         }
       ]
     },
@@ -89,10 +92,16 @@
       "image": "images/gallery/hisabati.png",
       "links": [
         {
+          "name": "npm",
+          "url": "https://www.npmjs.com/package/hisabati",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
+        },
+        {
           "name": "GitHub",
           "url": "https://github.com/wimaengine/hisabati",
           "imageUrl": "/images/icons/icon-tag.svg",
-          "priority": 1
+          "priority": 2
         }
       ]
     },
@@ -103,10 +112,16 @@
       "image": "images/gallery/maumbo.png",
       "links": [
         {
+          "name": "npm",
+          "url": "https://www.npmjs.com/package/maumbo",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
+        },
+        {
           "name": "GitHub",
           "url": "https://github.com/wimaengine/maumbo",
           "imageUrl": "/images/icons/icon-tag.svg",
-          "priority": 1
+          "priority": 2
         }
       ]
     },
@@ -117,10 +132,16 @@
       "image": "images/gallery/marangi.png",
       "links": [
         {
-          "name": "GitHub",
-          "url": "https://github.com/wimaengine/maumbo",
+          "name": "npm",
+          "url": "https://www.npmjs.com/package/marangi",
           "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/wimaengine/marangi",
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 2
         }
       ]
     },
@@ -130,15 +151,17 @@
       "description": "Built a responsive School Library website using HTML and CSS, featuring a categorized book catalog with individual book detail pages, clear site navigation, and a contact page for librarian communication. The project focuses on clean layout design, content organization, and user-friendly browsing.",
       "image": "images/gallery/school-library.png",
       "links": [
-                {
+        {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/school-library/",
-          "imageUrl": "/images/icons/icon-tag.svg"
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/school-library",
-          "imageUrl": "/images/icons/icon-tag.svg"
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 2
         }
       ]
     },
@@ -159,13 +182,14 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/solar-system/",
-          "imageUrl": "/images/icons/icon-tag.svg"
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/solar-system",
           "imageUrl": "/images/icons/icon-tag.svg",
-          "priority": 1
+          "priority": 2
         }
       ]
     },
@@ -178,13 +202,14 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/astronaut-fly/",
-          "imageUrl": "/images/icons/icon-tag.svg"
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/astronaut-fly",
           "imageUrl": "/images/icons/icon-tag.svg",
-          "priority": 1
+          "priority": 2
         }
       ]
     },
@@ -230,13 +255,14 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/spartial-structures/",
-          "imageUrl": "/images/icons/icon-tag.svg"
+          "imageUrl": "/images/icons/icon-tag.svg",
+          "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/spartial-structures",
           "imageUrl": "/images/icons/icon-tag.svg",
-          "priority": 1
+          "priority": 2
         }
       ]
     },
