@@ -1,4 +1,5 @@
 import type { ProjectLink } from "../../common/index.ts";
+import { ProjectLinkIcon } from "./projectLinkIcon.tsx";
 
 export function ModalItem({ image, name, links, description }: ModalItemOptions) {
   return (
@@ -18,7 +19,9 @@ export function ModalItem({ image, name, links, description }: ModalItemOptions)
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {link.imageUrl ? <img src={link.imageUrl} alt="" /> : null}
+                  <span className="modal-popup__icon" aria-hidden="true">
+                    <ProjectLinkIcon link={link} className="modal-popup__icon-svg" />
+                  </span>
                   {link.name || "Project link"}
                 </a>
               )

@@ -164,7 +164,6 @@ export class Project {
 export class ProjectLink {
   name: string = ''
   url: string = ''
-  imageUrl: string = ''
   priority?: number
 
   static deserialize(data: any): ProjectLink | undefined {
@@ -176,10 +175,6 @@ export class ProjectLink {
 
     if (typeof data.url === "string") {
       link.url = data.url
-    }
-
-    if (typeof data.imageUrl === "string") {
-      link.imageUrl = data.imageUrl
     }
 
     if (typeof data.priority === "number" && Number.isFinite(data.priority)) {

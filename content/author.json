@@ -34,13 +34,11 @@
         {
           "name": "Website",
           "url": "https://wimaengine.github.io/wima/",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/wimaengine/wima",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 2
         }
       ]
@@ -54,13 +52,11 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/chaos-engine/",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/chaos-engine",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 2
         }
       ]
@@ -74,13 +70,11 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/webgl/",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/webgl",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 2
         }
       ]
@@ -94,13 +88,11 @@
         {
           "name": "npm",
           "url": "https://www.npmjs.com/package/hisabati",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/wimaengine/hisabati",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 2
         }
       ]
@@ -114,13 +106,11 @@
         {
           "name": "npm",
           "url": "https://www.npmjs.com/package/maumbo",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/wimaengine/maumbo",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 2
         }
       ]
@@ -134,13 +124,11 @@
         {
           "name": "npm",
           "url": "https://www.npmjs.com/package/marangi",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/wimaengine/marangi",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 2
         }
       ]
@@ -154,13 +142,11 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/school-library/",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/school-library",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 2
         }
       ]
@@ -182,13 +168,11 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/solar-system/",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/solar-system",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 2
         }
       ]
@@ -202,13 +186,11 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/astronaut-fly/",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/astronaut-fly",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 2
         }
       ]
@@ -222,7 +204,6 @@
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/battlefront-v1.0.1",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         }
       ]
@@ -235,13 +216,11 @@
       "links": [
         {
           "name": "Website",
-          "url": "https://waynemwashuma.github.io/pool/",
-          "imageUrl": "/images/icons/icon-tag.svg"
+          "url": "https://waynemwashuma.github.io/pool/"
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/pool",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         }
       ]
@@ -255,13 +234,11 @@
         {
           "name": "Website",
           "url": "https://waynemwashuma.github.io/spartial-structures/",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 1
         },
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/spartial-structures",
-          "imageUrl": "/images/icons/icon-tag.svg",
           "priority": 2
         }
       ]
@@ -275,7 +252,6 @@
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/c-programs",
-          "imageUrl": "/images/gallery/wima-engine.jpg",
           "priority": 1
         }
       ]
@@ -289,7 +265,6 @@
         {
           "name": "GitHub",
           "url": "https://github.com/waynemwashuma/cpp-projects",
-          "imageUrl": "/images/gallery/wima-engine.jpg",
           "priority": 1
         }
       ]
