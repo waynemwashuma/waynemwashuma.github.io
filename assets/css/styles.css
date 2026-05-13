@@ -3615,12 +3615,14 @@ img.u-pull-left {
 
 .folio-list__item {
     margin-bottom : var(--vspace-1);
+    min-height    : var(--item-min-height);
     position      : relative;
 }
 
 .folio-list__item-link {
     display             : block;
     width               : 100%;
+    min-height          : var(--item-min-height);
     padding-left        : calc(5.5 * var(--space));
     color               : white;
     transition-duration : .5s;
@@ -3652,14 +3654,18 @@ img.u-pull-left {
 }
 
 .folio-list__item-pic {
-    display  : block;
-    position : absolute;
-    top      : 0;
-    left     : 0;
+    display       : block;
+    width         : var(--item-min-height);
+    height        : var(--item-min-height);
+    overflow      : hidden;
+    position      : absolute;
+    top           : 0;
+    left          : 0;
 }
 
 .folio-list__item-pic img {
     vertical-align : bottom;
+    display        : block;
     object-fit     : cover;
     width          : var(--item-min-height);
     height         : var(--item-min-height);
@@ -4099,35 +4105,41 @@ img.u-pull-left {
     .folio-list__item-link {
         padding-left : calc(4.25 * var(--space));
     }
+
+    .folio-list__proj-link {
+        top   : 0.65rem;
+        right : 0.65rem;
+    }
 }
 
 @media screen and (max-width: 400px) {
-    .folio-list .column {
-        flex  : none;
-        width : 50%;
-    }
-
     .folio-list__item {
-        margin-bottom : 0;
+        min-height : auto;
     }
 
     .folio-list__item-link {
+        min-height   : auto;
         padding-left : 0;
     }
 
     .folio-list__item-pic {
         position : static;
+        width    : 100%;
+        height   : auto;
     }
 
     .folio-list__item-pic img {
-        max-width : 100%;
-        width     : 100%;
-        height    : auto;
+        width        : 100%;
+        height       : auto;
+        aspect-ratio : 4 / 3;
     }
 
-    .folio-list__item-text,
-    .folio-list__proj-link {
+    .folio-list__item-text {
         display : none;
+    }
+
+    .folio-list__proj-link {
+        display : inline-flex;
     }
 
     .modal-popup__desc {
