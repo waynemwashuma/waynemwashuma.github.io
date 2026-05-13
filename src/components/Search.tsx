@@ -13,10 +13,19 @@ import "./Search.css"
 type SearchProps = {
   posts: SearchDoc[]
 }
+
+type SearchIndexDocument = Pick<SearchDoc, "title" | "description" | "slug">
+
+type SearchResultGroup = {
+  result: Array<{
+    id: string
+  }>
+}
+
 export default function Search({ posts }: SearchProps) {
   const [query, setQuery] = useState("")
   const [index, setIndex] = useState<Document<any> | undefined>()
-  const [resultSlugs, setResultSlugs] = useState<Set<SearchDoc>>(new Set())
+  const [resultSlugs, setResultSlugs] = useState<Set<string>>(new Set())
 
   async function loadIndex() {
     try {
@@ -26,12 +35,12 @@ export default function Search({ posts }: SearchProps) {
         throw new Error(`Search index request failed: ${res.status} ${res.statusText}`)
       }
 
-      const exported = await res.json()
+      const searchDocuments = await res.json() as SearchIndexDocument[]
       const idx = new Document(blogSearchDocumentOptions)
-
-      Object.entries(exported as Record<string, string>).forEach(([key, data]) => {
-        idx.import(key, data as string)
+      searchDocuments.forEach((doc) => {
+        idx.add(doc)
       })
+
       setIndex(idx)
     } catch (error) {
       console.error("Failed to load blog search index:", error)
@@ -49,43 +58,20 @@ export default function Search({ posts }: SearchProps) {
       return
     }
 
-    const searchResults = index.search(query, BLOG_SEARCH_QUERY_OPTIONS)
-    const slugs = new Set<SearchDoc>()
+    const searchResults = index.search(query, BLOG_SEARCH_QUERY_OPTIONS) as SearchResultGroup[]
+    const slugs = new Set<string>()
     searchResults.forEach((resultGroup) => {
-      
-      switch (resultGroup.field) {
-        case "title":
-          posts.forEach(p => {
-            resultGroup.result.forEach(g => {
-              if (p.title === g.doc.title) {
-                slugs.add(p)
-              }
-            })
-          })
-          break;
-        case "description":
-          posts.forEach(p => {
-            resultGroup.result.forEach(g => {
-              if (p.description === g.doc.title) {
-                slugs.add(p)
-              }
-            })
-          })
-          break;
-        default:
-          break;
-      }
+      resultGroup.result.forEach((result) => {
+        slugs.add(result.id)
+      })
     })
-
-    console.log(slugs);
 
     setResultSlugs(slugs)
   }, [query, index])
 
   const visiblePosts = query.length < BLOG_SEARCH_MIN_QUERY_LENGTH
     ? posts
-    : [...resultSlugs.values()]
-      .filter((post): post is SearchDoc => Boolean(post))
+    : posts.filter((post) => resultSlugs.has(post.slug))
 
   return (<>
     <section className="blog-search" aria-label="Search blog posts">
@@ -109,7 +95,7 @@ export default function Search({ posts }: SearchProps) {
           <li key={post.id}>
             <article>
               <h2>
-                <a href={`/blog/${post.id}/`}>{post.title}</a>
+                <a href={`/blog/${post.slug}/`}>{post.title}</a>
               </h2>
               <p>{post.description}</p>
               <small>{post.pubDate}</small>

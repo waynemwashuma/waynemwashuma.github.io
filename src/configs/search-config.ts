@@ -14,7 +14,7 @@ export const blogSearchDocumentOptions = {
   tokenize: "full" as const,
   encoder: "LatinAdvanced" as const,
   document: {
-    id: "id",
+    id: "slug",
     index: ["title", "description"],
     store: ["title", "slug"],
   },

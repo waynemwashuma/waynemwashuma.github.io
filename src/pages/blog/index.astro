@@ -15,7 +15,7 @@ const searchDocs: SearchDoc[] = posts.map((post: CollectionEntry<"blog">) => ({
   id: post.id,
   title: post.data.title,
   description: post.data.description,
-  slug: post.slug,
+  slug: post.id,
   pubDate: post.data.pubDate.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",

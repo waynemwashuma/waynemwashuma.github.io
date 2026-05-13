@@ -6,5 +6,6 @@ export type SearchDoc = {
   id: string
   title: string
   description: string
+  slug: string
   pubDate: string
 }
