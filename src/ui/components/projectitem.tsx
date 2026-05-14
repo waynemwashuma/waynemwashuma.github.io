@@ -35,9 +35,17 @@ export function ProjectItem({
             </div>
           </div>
         </a>
-        <a className="folio-list__proj-link" href={primaryLink?.url || "#"} title={primaryLink?.name || "project link"} target="_blank">
-          {primaryLink ? <ProjectLinkIcon link={primaryLink} className="folio-list__proj-link-icon" /> : null}
-        </a>
+        {primaryLink ? (
+          <a
+            className="folio-list__proj-link"
+            href={primaryLink.url}
+            title={primaryLink.name || "project link"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ProjectLinkIcon link={primaryLink} className="folio-list__proj-link-icon" />
+          </a>
+        ) : null}
       </li>
     </>
   )

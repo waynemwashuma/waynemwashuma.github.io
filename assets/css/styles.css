@@ -3675,6 +3675,7 @@ img.u-pull-left {
 .folio-list__item-pic::before,
 .folio-list__item-pic::after {
     transition : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    pointer-events : none;
 }
 
 .folio-list__item-pic::before {
@@ -3764,6 +3765,7 @@ img.u-pull-left {
     border           : 1px solid rgba(255, 255, 255, 0.16);
     backdrop-filter  : blur(10px);
     transition       : var(--transition-default);
+    z-index          : 3;
 }
 
 .folio-list__proj-link-icon {
