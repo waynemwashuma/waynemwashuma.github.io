@@ -23,7 +23,22 @@ const { post } = Astro.props as Props;
 const { Content } = await render(post);
 const canonicalUrl = `${SITE_URL}/blog/${post.id}/`;
 const publishedTime = post.data.pubDate.toISOString();
-const modifiedTime = (post.data.updatedDate ?? post.data.pubDate).toISOString();
+const modifiedTime = (post.data.modifiedDate ?? post.data.pubDate).toISOString();
+const publishedLabel = post.data.pubDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+});
+const modifiedLabel = post.data.modifiedDate?.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+});
+const metaItems = [
+  `Published ${publishedLabel}`,
+  ...(modifiedLabel ? [`Modified ${modifiedLabel}`] : []),
+  ...(post.data.readTime ? [`${post.data.readTime} read`] : [])
+];
 const schema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -62,15 +77,16 @@ const schema = {
     </p>
     <article>
       <header>
+        <div class="post-meta">
+          {metaItems.map((item, index) => (
+            <>
+              {index > 0 && <span class="post-meta-separator" aria-hidden="true">◇</span>}
+              <small>{item}</small>
+            </>
+          ))}
+        </div>
         <h1>{post.data.title}</h1>
         <p>{post.data.description}</p>
-        <small>
-          {post.data.pubDate.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-          })}
-        </small>
       </header>
       <Content />
     </article>
@@ -94,5 +110,19 @@ const schema = {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid #d9d9d9;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0.35rem;
+  }
+
+  .post-meta-separator {
+    position: relative;
+    top: -0.08em;
+    line-height: 1;
   }
 </style>

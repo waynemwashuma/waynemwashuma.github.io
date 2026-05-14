@@ -38,7 +38,7 @@ const schema = {
     headline: post.data.title,
     url: `${SITE_URL}/blog/${post.id}/`,
     datePublished: post.data.pubDate.toISOString(),
-    dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    dateModified: (post.data.modifiedDate ?? post.data.pubDate).toISOString(),
     description: post.data.description,
   })),
 };

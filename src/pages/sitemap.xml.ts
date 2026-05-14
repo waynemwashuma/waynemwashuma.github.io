@@ -13,14 +13,14 @@ export async function GET() {
     {
       url: `${SITE_URL}/blog/`,
       lastmod: posts[0]
-        ? (posts[0].data.updatedDate ?? posts[0].data.pubDate).toISOString()
+        ? (posts[0].data.modifiedDate ?? posts[0].data.pubDate).toISOString()
         : new Date().toISOString(),
     },
   ];
 
   const postPages = posts.map((post: CollectionEntry<"blog">) => ({
     url: `${SITE_URL}/blog/${post.id}/`,
-    lastmod: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    lastmod: (post.data.modifiedDate ?? post.data.pubDate).toISOString(),
   }));
 
   const urls = [...staticPages, ...postPages];
