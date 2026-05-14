@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import GiscusComments from "../../components/GiscusComments.astro";
+import { SITE_NAME, SITE_URL } from "../../consts/seo";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -20,9 +21,41 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const { post } = Astro.props as Props;
 const { Content } = await render(post);
+const canonicalUrl = `${SITE_URL}/blog/${post.id}/`;
+const publishedTime = post.data.pubDate.toISOString();
+const modifiedTime = (post.data.updatedDate ?? post.data.pubDate).toISOString();
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  url: canonicalUrl,
+  datePublished: publishedTime,
+  dateModified: modifiedTime,
+  author: {
+    "@type": "Person",
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+  publisher: {
+    "@type": "Person",
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+  mainEntityOfPage: canonicalUrl,
+  keywords: post.data.tags,
+  inLanguage: "en",
+};
 ---
 
-<BaseLayout ogTitle={post.data.title} title={`${post.data.title} | Blog`} description={post.data.description}>
+<BaseLayout
+  title={`${post.data.title} | Blog | ${SITE_NAME}`}
+  description={post.data.description}
+  type="article"
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+  schema={schema}
+>
   <main class="blog-post">
     <p>
       <a href="/blog/">Back to blog</a>

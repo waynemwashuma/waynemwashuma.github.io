@@ -1,11 +1,40 @@
 ---
 import App from "../App";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  SITE_NAME,
+  SITE_URL,
+  SOCIAL_LINKS,
+} from "../consts/seo";
 
-const name = "Mwashuma's Portfolio"
+const pageTitle = DEFAULT_TITLE;
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: SITE_URL,
+    description: DEFAULT_DESCRIPTION,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: SITE_NAME,
+    url: SITE_URL,
+    image: `${SITE_URL}/images/icons/website-logo.jpeg`,
+    sameAs: [...SOCIAL_LINKS],
+    jobTitle: "Full Stack Software Engineer",
+    homeLocation: {
+      "@type": "Place",
+      name: "Nairobi, Kenya",
+    },
+  },
+];
 ---
 
-<BaseLayout ogTitle={name} title={name} description="Portfolio for Wayne Mwashuma">
+<BaseLayout title={pageTitle} description={DEFAULT_DESCRIPTION} schema={schema}>
   <div id="preloader">
     <div id="loader"></div>
   </div>

@@ -3,6 +3,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Search from "../../components/Search";
 import type { SearchDoc } from "../../types";
+import { SITE_NAME, SITE_URL } from "../../consts/seo";
 
 const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   .filter((post: CollectionEntry<"blog">) => !post.data.draft)
@@ -22,9 +23,28 @@ const searchDocs: SearchDoc[] = posts.map((post: CollectionEntry<"blog">) => ({
     day: "numeric",
   }),
 }));
+
+const title = `Blog | ${SITE_NAME}`;
+const description = "Articles and notes by Wayne Mwashuma on engineering, learning, and shipping software.";
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: `${SITE_NAME} Blog`,
+  url: `${SITE_URL}/blog/`,
+  description,
+  inLanguage: "en",
+  blogPost: posts.map((post: CollectionEntry<"blog">) => ({
+    "@type": "BlogPosting",
+    headline: post.data.title,
+    url: `${SITE_URL}/blog/${post.id}/`,
+    datePublished: post.data.pubDate.toISOString(),
+    dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    description: post.data.description,
+  })),
+};
 ---
 
-<BaseLayout ogTitle="Blog" title="Blog | Wayne Mwashuma" description="Articles and notes by Wayne Mwashuma">
+<BaseLayout title={title} description={description} type="website" schema={schema}>
   <main class="blog-page">
     <h2>Blog</h2>
     <p>Notes on building, learning, and shipping.</p>

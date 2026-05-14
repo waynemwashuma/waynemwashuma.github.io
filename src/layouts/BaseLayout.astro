@@ -1,11 +1,38 @@
 ---
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  SITE_URL,
+  SITE_NAME,
+  X_HANDLE,
+} from "../consts/seo";
+
 interface Props {
-  ogTitle: string;
   title: string;
   description?: string;
+  image?: string;
+  type?: "website" | "article";
+  noindex?: boolean;
+  publishedTime?: string;
+  modifiedTime?: string;
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
-const { title, ogTitle, description = "Wayne Mwashuma website" } = Astro.props as Props;
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  image = DEFAULT_OG_IMAGE,
+  type = "website",
+  noindex = false,
+  publishedTime,
+  modifiedTime,
+  schema,
+} = Astro.props as Props;
+
+const siteUrl = new URL(SITE_URL);
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+const socialImageUrl = new URL(image, siteUrl);
+const schemaEntries = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 ---
 
 <!doctype html>
@@ -15,7 +42,28 @@ const { title, ogTitle, description = "Wayne Mwashuma website" } = Astro.props a
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="author" content="Wayne Mwashuma" />
-    <meta property="og:title" content={ogTitle} />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    <link rel="canonical" href={canonicalUrl.href} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:image" content={socialImageUrl.href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl.href} />
+    {X_HANDLE && <meta name="twitter:creator" content={X_HANDLE} />}
+    {X_HANDLE && <meta name="twitter:site" content={X_HANDLE} />}
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+    {
+      schemaEntries.map((entry) => (
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(entry)} />
+      ))
+    }
     <link rel="shortcut icon" href="/images/icons/logo.jpeg" type="image/x-icon" />
     <link rel="stylesheet" href="/css/vendor.css" />
     <link rel="stylesheet" href="/css/styles.css" />
