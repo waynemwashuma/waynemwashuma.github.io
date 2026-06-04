@@ -12,18 +12,19 @@
     "CI/CD automation"
   ],
   "education": [
-  {
-    "qualification": "Certificate of Software Engineering",
-    "institute": "Modcom Institute of Technology",
-    "timeline": "2022",
-    "description": "Modcom is a practical‐focused tech training hub in Westlands, Nairobi, offering hands-on courses in software dev, data science, cybersecurity, and IoT. With strong industry partnerships, flexible schedules, and real-world learning, it's ideal for those eager to quickly build employable tech skills"
-  },
-  {
-    "qualification": "Bachelors of Software Engineering",
-    "institute": "Multimedia University of Kenya",
-    "timeline": "2023-2027",
-    "description": "Multimedia University of Kenya (MMU) is a public university chartered in 2013, located in Karen, Nairobi. The university has faculties for Computing and Information Technology, where programs such as Software Engineering, Computer Science, and IT prepare students for careers in modern tech. These courses are supported by industry partnerships (e.g., Huawei, Google, IBM, Intel) and hands-on training in software labs, innovation hubs, and collaborative projects."
-  }],
+    {
+      "qualification": "Certificate of Software Engineering",
+      "institute": "Modcom Institute of Technology",
+      "timeline": "2022",
+      "description": "Modcom is a practical‐focused tech training hub in Westlands, Nairobi, offering hands-on courses in software dev, data science, cybersecurity, and IoT. With strong industry partnerships, flexible schedules, and real-world learning, it's ideal for those eager to quickly build employable tech skills"
+    },
+    {
+      "qualification": "Bachelors of Software Engineering",
+      "institute": "Multimedia University of Kenya",
+      "timeline": "2023-2027",
+      "description": "Multimedia University of Kenya (MMU) is a public university chartered in 2013, located in Karen, Nairobi. The university has faculties for Computing and Information Technology, where programs such as Software Engineering, Computer Science, and IT prepare students for careers in modern tech. These courses are supported by industry partnerships (e.g., Huawei, Google, IBM, Intel) and hands-on training in software labs, innovation hubs, and collaborative projects."
+    }
+  ],
   "projects": [
     {
       "name": "Wima engine",
@@ -151,13 +152,61 @@
         }
       ]
     },
+    {
+      "name": "Weather Wave",
+      "category": "Website",
+      "description": "A global weather app showing temperature, humidity and wind speed.",
+      "image": "/images/gallery/default.jpg",
+      "links": [
         {
+          "name": "Website",
+          "url": "https://waynemwashuma.github.io/weather_wave/",
+          "priority": 1
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/weather_wave",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "name": "Applicant",
+      "category": "Website",
+      "description": "Application review website.",
+      "image": "/images/gallery/default.jpg",
+      "links": [
+        {
+          "name": "Website",
+          "url": "https://waynemwashuma.github.io/applicant/",
+          "priority": 1
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/applicant",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "name": "Cropguard AI",
+      "category": "Website",
+      "description": "AI crop disease diagnosis mobile web app.",
+      "image": "/images/gallery/default.jpg",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/cropguard-ai",
+          "priority": 1
+        }
+      ]
+    },
+    {
       "name": "Wima Engine Editor",
       "category": "Application",
       "description": "A work in progress editor for the Wima Game Engine. Enables resource and entity inspection, along with visibility into ECS internals such as archetypes and tables, enabling efficient debugging and analysis of engine state during game development.",
       "image": "images/gallery/wima-editor.png",
-      "links": [
-      ]
+      "links": []
     },
     {
       "name": "Solar system",
@@ -225,6 +274,19 @@
         }
       ]
     },
+        {
+      "name": "Three.js broiler plate",
+      "category": "Template",
+      "description": "Boilerplate for three.js projects.",
+      "image": "/images/gallery/default.jpg",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/three.js-broiler-plate",
+          "priority": 1
+        }
+      ]
+    },
     {
       "name": "Spartial structures",
       "category": "Experiment",
@@ -268,19 +330,32 @@
           "priority": 1
         }
       ]
+    },
+    {
+      "name": "Ear clipping",
+      "category": "Experiment",
+      "description": "Polygon triangulation algorithm.",
+      "image": "/images/gallery/default.jpg",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/ear-clipping",
+          "priority": 1
+        }
+      ]
     }
   ],
-  "socials":[
+  "socials": [
     {
-      "name":"Github",
+      "name": "Github",
       "url": "https://github.com/waynemwashuma"
     },
     {
-      "name":"X",
+      "name": "X",
       "url": "https://x.com/waynemwashuma"
     },
     {
-      "name":"LinkedIn",
+      "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/wayne-mwashuma-878200252"
     }
   ]
