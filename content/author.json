@@ -135,6 +135,24 @@
       ]
     },
     {
+      "name": "Pazia",
+      "category": "Website",
+      "description": "A curated entertainment discovery site with search, featured titles, and launch-focused browsing sections.",
+      "image": "/images/gallery/pazia.png",
+      "links": [
+        {
+          "name": "Website",
+          "url": "https://waynemwashuma.github.io/pazia/",
+          "priority": 1
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/waynemwashuma/pazia",
+          "priority": 2
+        }
+      ]
+    },
+    {
       "name": "School library",
       "category": "Website",
       "description": "Built a responsive School Library website using HTML and CSS, featuring a categorized book catalog with individual book detail pages, clear site navigation, and a contact page for librarian communication. The project focuses on clean layout design, content organization, and user-friendly browsing.",
@@ -156,7 +174,7 @@
       "name": "Weather Wave",
       "category": "Website",
       "description": "A global weather app showing temperature, humidity and wind speed.",
-      "image": "/images/gallery/default.jpg",
+      "image": "/images/gallery/weather_wave.png",
       "links": [
         {
           "name": "Website",
@@ -174,7 +192,7 @@
       "name": "Applicant",
       "category": "Website",
       "description": "Application review website.",
-      "image": "/images/gallery/default.jpg",
+      "image": "/images/gallery/applicant.png",
       "links": [
         {
           "name": "Website",
@@ -192,7 +210,7 @@
       "name": "Cropguard AI",
       "category": "Website",
       "description": "AI crop disease diagnosis mobile web app.",
-      "image": "/images/gallery/default.jpg",
+      "image": "/images/gallery/cropgaurdAI.png",
       "links": [
         {
           "name": "GitHub",
@@ -274,11 +292,11 @@
         }
       ]
     },
-        {
+    {
       "name": "Three.js broiler plate",
       "category": "Template",
       "description": "Boilerplate for three.js projects.",
-      "image": "/images/gallery/default.jpg",
+      "image": "/images/gallery/editor.png",
       "links": [
         {
           "name": "GitHub",
