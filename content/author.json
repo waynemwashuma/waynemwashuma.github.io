@@ -20,7 +20,7 @@
       "links": [
         {
           "name": "Website",
-          "url": "https://wimaengine.github.io/wima/",
+          "url": "https://wimaengine.org",
           "priority": 1
         },
         {
@@ -49,19 +49,19 @@
       ]
     },
     {
-      "name": "WebGL Rendering Engine",
+      "name": "Chorama",
       "category": "Library",
       "description": "A modular WebGL2 rendering engine from scratch in JavaScript, featuring a plugin-based render pipeline, scene graph architecture, custom materials/shaders, mesh generation, lighting, camera controls, render targets, and OBJ/glTF model asset loading (including skinned models). Includes an interactive demo suite to showcase real-time rendering features and engine extensibility.",
       "image": "images/gallery/webgl.png",
       "links": [
         {
           "name": "Website",
-          "url": "https://waynemwashuma.github.io/webgl/",
+          "url": "https://chorama.wimaengine.org/",
           "priority": 1
         },
         {
           "name": "GitHub",
-          "url": "https://github.com/waynemwashuma/webgl",
+          "url": "https://github.com/wimaengine/chorama",
           "priority": 2
         }
       ]
@@ -128,7 +128,7 @@
       "links": [
         {
           "name": "Website",
-          "url": "https://waynemwashuma.github.io/pazia/",
+          "url": "https://pazia.mwashuma.dev/",
           "priority": 1
         },
         {
@@ -146,7 +146,7 @@
       "links": [
         {
           "name": "Website",
-          "url": "https://waynemwashuma.github.io/school-library/",
+          "url": "https://school-library.mwashuma.dev/",
           "priority": 1
         },
         {
@@ -164,12 +164,12 @@
       "links": [
         {
           "name": "Website",
-          "url": "https://waynemwashuma.github.io/weather_wave/",
+          "url": "https://weather-wave.mwashuma.dev/",
           "priority": 1
         },
         {
           "name": "GitHub",
-          "url": "https://github.com/waynemwashuma/weather_wave",
+          "url": "https://github.com/waynemwashuma/weather-wave",
           "priority": 2
         }
       ]
@@ -182,7 +182,7 @@
       "links": [
         {
           "name": "Website",
-          "url": "https://waynemwashuma.github.io/applicant/",
+          "url": "https://applicant.mwashuma.dev/",
           "priority": 1
         },
         {
@@ -220,7 +220,7 @@
       "links": [
         {
           "name": "Website",
-          "url": "https://waynemwashuma.github.io/solar-system/",
+          "url": "https://solar-system.mwashuma.dev/",
           "priority": 1
         },
         {
@@ -238,7 +238,7 @@
       "links": [
         {
           "name": "Website",
-          "url": "https://waynemwashuma.github.io/astronaut-fly/",
+          "url": "https://astronaut-fly.mwashuma.dev/",
           "priority": 1
         },
         {
@@ -269,12 +269,11 @@
       "links": [
         {
           "name": "Website",
-          "url": "https://waynemwashuma.github.io/pool/"
+          "url": "https://pool.mwashuma.dev/"
         },
         {
           "name": "GitHub",
-          "url": "https://github.com/waynemwashuma/pool",
-          "priority": 1
+          "url": "https://github.com/waynemwashuma/pool"
         }
       ]
     },
@@ -299,7 +298,7 @@
       "links": [
         {
           "name": "Website",
-          "url": "https://waynemwashuma.github.io/spartial-structures/",
+          "url": "https://spartial-structures.mwashuma.dev/",
           "priority": 1
         },
         {
@@ -360,7 +359,7 @@
     },
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/wayne-mwashuma-878200252"
+      "url": "https://www.linkedin.com/in/wayne-mwashuma"
     }
   ]
 }
