@@ -1,38 +1,3 @@
-export class Education {
-  timeline: string = ''
-  institute: string = ''
-  qualification: string = ''
-  description: string = ''
-  constructor(qualification = '', institute = '', timeline = '', description = '') {
-    this.qualification = qualification
-    this.institute = institute
-    this.timeline = timeline
-    this.description = description
-  }
-
-  static deserialize(data: any): Education | undefined {
-    const project = new Education()
-    if (!(data instanceof Object)) return
-    if (typeof data.institute === "string") {
-      project.institute = data.institute
-    }
-
-    if (typeof data.description === "string") {
-      project.description = data.description
-    }
-
-    if (typeof data.timeline === "string") {
-      project.timeline = data.timeline
-    }
-
-    if (typeof data.qualification === "string") {
-      project.qualification = data.qualification
-    }
-
-    return project
-  }
-}
-
 export class User {
   name: string = ''
   about: string = ''
@@ -41,7 +6,6 @@ export class User {
   phone: string = ''
   image: string = 'images/avatars/default-inverted.jpg'
   skills: string[] = []
-  education: Education[] = []
   projects: Project[] = []
   socials: SocialMedia[] = []
   static deserialize(data: any): User | undefined {
@@ -89,17 +53,6 @@ export class User {
 
         if (project) {
           user.projects.push(project)
-        }
-      }
-    }
-
-    if (data.education instanceof Array) {
-      for (let i = 0; i < data.education.length; i++) {
-        const educationData = data.education[i];
-        const education = Education.deserialize(educationData)
-
-        if (education) {
-          user.education.push(education)
         }
       }
     }

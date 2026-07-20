@@ -1,9 +1,8 @@
 import { useContext } from "react"
-import { Education } from "../../../common/index.ts"
 import { userContext } from "../../store.tsx"
 
 export function About() {
-  const {skills,education,about,image} = useContext(userContext)
+  const {skills,about,image} = useContext(userContext)
   
   return (
     <>
@@ -39,36 +38,6 @@ export function About() {
 
         </div>
       </div>
-
-      <div className="row about-timelines" data-animate-block>
-        <div className="column lg-6 tab-12">
-          <h2 className="text-pretitle" data-animate-el>
-            Education
-          </h2>
-          <div className="timeline" data-animate-el>
-            {education.map((e) => {
-              return <EducationCard education={e} key={e.qualification}/>
-            })}
-
-          </div>
-        </div>
-      </div>
     </>
-  )
-}
-
-export function EducationCard({education}:{education:Education}) {
-  return (
-    <div className="timeline__block">
-      <div className="timeline__bullet"></div>
-      <div className="timeline__header">
-        <h4 className="timeline__title">{education.institute}</h4>
-        <h5 className="timeline__meta">{education.qualification}</h5>
-        <p className="timeline__timeframe">{education.timeline}</p>
-      </div>
-      <div className="timeline__desc">
-        <p>{education.description}</p>
-      </div>
-    </div>
   )
 }
